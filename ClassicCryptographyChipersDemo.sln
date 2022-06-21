@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{653BB70B-D0C6-45B2-AC26-5469D785AF3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipersUtility", "ChipersUtility\ChipersUtility.csproj", "{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{653BB70B-D0C6-45B2-AC26-5469D785AF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{653BB70B-D0C6-45B2-AC26-5469D785AF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{653BB70B-D0C6-45B2-AC26-5469D785AF3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

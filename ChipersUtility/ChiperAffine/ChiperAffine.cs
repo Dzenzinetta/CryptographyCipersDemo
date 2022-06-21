@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crtypto_update
+namespace ChipersUtility.ChiperAffine
 {
-	class ChiperAfiine
-	{
-
+    class ChiperAffine
+    {
 		Other other = new Other();
 		private int addictiveKey, multiplicativeKey;
 		string originalWord = string.Empty;
@@ -56,7 +55,7 @@ namespace Crtypto_update
 		}
 
 		int AffineSymbolEncriptor(int wordCode) => (multiplicativeKey * wordCode + addictiveKey) % Other.AlphabetLength;
-		
+
 		int AffineSymbolDecriptor(int wordCode)
 		{
 			if (wordCode >= addictiveKey)
@@ -97,5 +96,7 @@ namespace Crtypto_update
 					return true;
 			return false;
 		}
+
+
 	}
 }
