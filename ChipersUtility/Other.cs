@@ -4,22 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crtypto_update
+namespace ChipersUtility
 {
 	class Other
 	{
-		public string AlphabetStr { get; set; }
+		private string _alphabet;
 		public const int AlphabetLength = 26;
 
-		public Other()
+		public string GetAlphabet()
 		{
-			AlphabetStr = Alphabet();
+			for (char a = 'A'; a <= 'Z'; a++)
+				_alphabet += a;
+			return _alphabet;
 		}
 
 		public int TextToCode(char input)
 		{
 			for (int i = 0; i < AlphabetLength; i++)
-				if (input == AlphabetStr[i])
+				if (input == _alphabet[i])
 					return i;
 			return 0;
 		}
@@ -28,18 +30,11 @@ namespace Crtypto_update
 		{
 			for (int i = 0; i < AlphabetLength; i++)
 				if (input == i)
-					return AlphabetStr[i];
+					return _alphabet[i];
 			return '\0';
 		}
 
-		public string Alphabet()
-		{
-			for (char a = 'A'; a <= 'Z'; a++)
-				AlphabetStr += a;
-			return AlphabetStr;
-		}
-
-		string SpaceCheck(string strInput)
+		string RemoveSpace(string strInput)
 		{
 			string inputSpaceless = string.Empty;
 			for (int i = 0; i < strInput.Length; i++)
@@ -72,9 +67,7 @@ namespace Crtypto_update
 
 		bool IsInputContainZero(string inputKey)
 		{
-			if (inputKey.Contains("0"))
-				return true;
-			return false;
+			return (inputKey.Contains("0"));	
 		}
 
 		public string TextBox(string title)
@@ -89,7 +82,7 @@ namespace Crtypto_update
 				if (IsInputContainZero(strInput))
 					Console.WriteLine("You input Zero (For cryptography zero key is not allowed!).\n\t Please, try again");
 			} while (string.IsNullOrWhiteSpace(strInput) && IsInputContainZero(strInput));
-			return SpaceCheck(strInput.ToUpper());
+			return RemoveSpace(strInput.ToUpper());
 		}
 
 		public int GetInputForInteger(string title)
@@ -101,7 +94,7 @@ namespace Crtypto_update
 				if (int.TryParse(strInput, out int result))
 					return result;
 				Console.WriteLine("Error! Inputed key is not digital");
-			} while (!int.TryParse(strInput, out int nonUsednteger));
+			} while (int.TryParse(strInput, out int nonUsedInteger) == false);
 
 			return 0;
 		}

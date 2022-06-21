@@ -4,40 +4,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crtypto_update
+namespace ChipersUtility.ChiperVertical
 {
 	class VerticalKeyInput
 	{
-		private int _allowedLengthForVerticalChiper;
-		private string _titleForInput = @"Rules for this key:
-											1. No Duplicates.
-											2. Single element couldn't exceed allowed length of the key
-											3. Key couldn't contain zero";
+		private readonly Other _other = new Other();
+		private readonly VerticalKeyValidator _verticalKeyValidator = new VerticalKeyValidator();
 
-		public VerticalKeyInput(int length)
+		private const int MinimalLengthForDivider = 7;
+		private readonly int _wordLength;
+
+		private readonly string _titleForInput = "Rules for this key:" +
+			"\n\t1. No Duplicates." +
+			"\n\t2. Single element couldn't exceed allowed length of the key" +
+			"\n\t3. Key couldn't contain zero";
+
+		public VerticalKeyInput(int wordLength)
 		{
-			_allowedLengthForVerticalChiper = length;
+			_wordLength = wordLength;
 		}
+
+		private int GetKeyLength()
+		{
+			double wordLengthRoot = Math.Sqrt(_wordLength);
+
+			if (_wordLength <= MinimalLengthForDivider)
+				return _wordLength;
+			if (wordLengthRoot - (int)wordLengthRoot == 0.0)
+				return (int)wordLengthRoot;
+			return (int)wordLengthRoot + 1;
+		}
+
 
 		public int[] GetVerticalKeyFromConsole()
 		{
-			VerticalKeyValidator keyValidation = new VerticalKeyValidator(_allowedLengthForVerticalChiper);
-			Other other = new Other();
+			VerticalKeyModel verticalKeyModel = new VerticalKeyModel
+			{
+				AllowedKeyLengthForVerticalChiper = GetKeyLength()
+			};
 
-			var verticalKeyFromConsole = new List<int>();
-	
 			Console.WriteLine($"{ _titleForInput }\n\n");
 
-			for (int i = 0; i < _allowedLengthForVerticalChiper; i++)
+			for (int i = 0; i < verticalKeyModel.AllowedKeyLengthForVerticalChiper; i++)
 			{
 				do
 				{
-					string tmpTitle = $"Input {i + 1} - symbol from {_allowedLengthForVerticalChiper} and press Enter";
-					verticalKeyFromConsole[i] = other.GetInputForInteger(tmpTitle);
+					string tmpTitle = $"Input {i + 1} - symbol from {verticalKeyModel.AllowedKeyLengthForVerticalChiper} and press Enter";
+					verticalKeyModel.SingleElementOfVerticalKey = _other.GetInputForInteger(tmpTitle);
+					verticalKeyModel.VerticalKey[i] = verticalKeyModel.SingleElementOfVerticalKey;
 
-				} while (keyValidation.IsKeyValid(verticalKeyFromConsole, verticalKeyFromConsole[i]) == false);
+					verticalKeyModel.VerticalKey.ForEach(Print);
+
+				} while (_verticalKeyValidator.IsValidationFail(verticalKeyModel));
 			}
-			return verticalKeyFromConsole.ToArray();
+
+			Console.WriteLine("Validation passed. Good Vertical Key!");
+			return verticalKeyModel.VerticalKey.ToArray();
+		}
+
+		private void Print(int s)
+		{
+			Console.Write(s);
 		}
 	}
 

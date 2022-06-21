@@ -44,8 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiperAffine\ChiperAffine.cs" />
+    <Compile Include="ChiperHill\ChiperHill.cs" />
+    <Compile Include="ChiperPlayfair\ChiperPlayfair.cs" />
+    <Compile Include="ChiperVertical\ChiperVertical.cs" />
+    <Compile Include="ChiperVertical\KeyValidator\Validations\IVerticalKeyValidationModel.cs" />
+    <Compile Include="ChiperVertical\KeyValidator\KeyValidator.cs" />
+    <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeyDuplicatCheck.cs" />
+    <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeySymbolExceed.cs" />
+    <Compile Include="ChiperVertical\KeyValidator\VerticalKeyModel.cs" />
+    <Compile Include="ChiperVigenere\ChiperVigenere.cs" />
+    <Compile Include="Other.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChiperVertical\VerticalKeyInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

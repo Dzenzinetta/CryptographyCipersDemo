@@ -4,17 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crtypto_update
+namespace ChipersUtility
 {
 	class ChiperVerticalEncryptor
 	{
 		public string strKey {get; set;}
 		Other other = new Other();
 		
-
-
-
-
 		const int NumeralAmount = 9;
 		string errorMessage = string.Empty;
 		string strShortVerticalKey = string.Empty;
@@ -200,6 +196,7 @@ namespace Crtypto_update
 				rows = 0;
 
 			Console.Clear();
+
 			if (option)
 				Console.WriteLine("ДОБРО ПОЖАЛОВАТЬ В ПРОГРАММУ ШИФРОВАНИЯ МЕТОДОМ ВЕРТИКАЛЬНОЙ ПЕРЕСТАНОВКИ\n\n");
 			else
@@ -210,10 +207,12 @@ namespace Crtypto_update
 			word_length = word.Length;
 			key_length = KeyLengthCounter(word_length);
 
+
+
 			VerticalKeyInput verticalKeyInput = new VerticalKeyInput(key_length);
 
 			//io.clear_screen();
-			key = VerticalKey(key_length);
+			//key = VerticalKey(key_length);
 
 			columns = key_length;
 
