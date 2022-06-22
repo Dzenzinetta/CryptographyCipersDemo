@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipersUtility", "ChipersUtility\ChipersUtility.csproj", "{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperVerticalShift", "ChiperVertical\ChiperVerticalShift.csproj", "{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

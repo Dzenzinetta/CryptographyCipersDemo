@@ -6,9 +6,9 @@ namespace ChipersUtility
 	{
 		private int _textLength, _keyLength;
 		private string _textFromConsole;
+		private char[,] _matrix;
 
 		public int Columns, Rows;
-		public char[,] MatrixForVerticalCryptography;
 
 		public VerticalChiperMatrixProperties(VerticalChiperModel verticalChiperModel)
 		{
@@ -42,10 +42,10 @@ namespace ChipersUtility
 				{
 					if (c >= _textLength)
 					{
-						MatrixForVerticalCryptography[i, j] = 'X';
+						_matrix[i, j] = 'X';
 						continue;
 					}
-					MatrixForVerticalCryptography[i, j] = _textFromConsole[c];
+					_matrix[i, j] = _textFromConsole[c];
 				}
 			}
 		}
@@ -56,7 +56,7 @@ namespace ChipersUtility
 			{
 				for (int j = 0; j < Rows; j++, c++)
 				{
-					MatrixForVerticalCryptography[j, i] = _textFromConsole[c];
+					_matrix[j, i] = _textFromConsole[c];
 				}
 			}
 		}
