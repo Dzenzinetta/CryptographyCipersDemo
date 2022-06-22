@@ -52,7 +52,11 @@
     <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeyDuplicateCheck.cs" />
     <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeySymbolExceed.cs" />
     <Compile Include="ChiperVertical\KeyValidator\VerticalKeyModel.cs" />
+    <Compile Include="ChiperVertical\MatrixProperties.cs" />
+    <Compile Include="ChiperVertical\VerticalChiperModel.cs" />
     <Compile Include="ChiperVigenere\ChiperVigenere.cs" />
+    <Compile Include="InputFromConsole.cs" />
+    <Compile Include="InputFromConsoleValidator.cs" />
     <Compile Include="Other.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

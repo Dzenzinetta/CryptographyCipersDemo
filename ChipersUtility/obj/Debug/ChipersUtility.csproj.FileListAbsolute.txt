@@ -5,3 +5,8 @@ C:\Users\alpha\Documents\_Project\ClassicCryptographyChipersDemo\ChipersUtility\
 C:\Users\alpha\Documents\_Project\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
 C:\Users\alpha\Documents\_Project\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
 C:\Users\alpha\Documents\_Project\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.AssemblyReference.cache
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.SuggestedBindingRedirects.cache
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb

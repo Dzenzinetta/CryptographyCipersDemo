@@ -1,5 +1,5 @@
 ﻿
-namespace ChipersUtility.ChiperVertical
+namespace ChipersUtility
 {
     class VerticalKeySymbolExceed : IVerticalKeyValidationModel
     {

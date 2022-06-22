@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChipersUtility.ChiperVertical
+namespace ChipersUtility
 {
     class VerticalKeyValidator
     {
         private List<IVerticalKeyValidationModel> _validations = new List<IVerticalKeyValidationModel>();
-
+        
         public VerticalKeyValidator()
         {
             _validations = AddValidationList();

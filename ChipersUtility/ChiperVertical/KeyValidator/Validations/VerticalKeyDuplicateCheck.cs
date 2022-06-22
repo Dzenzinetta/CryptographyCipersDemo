@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace ChipersUtility.ChiperVertical
+namespace ChipersUtility
 {
     class VerticalKeyDuplicateCheck : IVerticalKeyValidationModel
     {
