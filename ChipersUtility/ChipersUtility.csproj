@@ -49,7 +49,7 @@
     <Compile Include="ChiperVertical\ChiperVertical.cs" />
     <Compile Include="ChiperVertical\KeyValidator\Validations\IVerticalKeyValidationModel.cs" />
     <Compile Include="ChiperVertical\KeyValidator\KeyValidator.cs" />
-    <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeyDuplicatCheck.cs" />
+    <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeyDuplicateCheck.cs" />
     <Compile Include="ChiperVertical\KeyValidator\Validations\VerticalKeySymbolExceed.cs" />
     <Compile Include="ChiperVertical\KeyValidator\VerticalKeyModel.cs" />
     <Compile Include="ChiperVigenere\ChiperVigenere.cs" />

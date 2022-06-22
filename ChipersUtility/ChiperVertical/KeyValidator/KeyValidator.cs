@@ -27,7 +27,6 @@ namespace ChipersUtility.ChiperVertical
 
         public bool IsValidationFail(VerticalKeyModel verticalKeyModel)
         {
-
             foreach (IVerticalKeyValidationModel validation in _validations)
             {
                 if (validation.IsValidationFail(verticalKeyModel))

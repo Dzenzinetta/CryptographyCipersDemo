@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 namespace ChipersUtility.ChiperVertical
 {
     interface IVerticalKeyValidationModel

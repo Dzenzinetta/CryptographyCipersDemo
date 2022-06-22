@@ -8,7 +8,7 @@ namespace ChipersUtility
 
         public int SingleElementOfVerticalKey { get; set; }
 
-        public List<int> VerticalKey { get; set; }
+        public List<int> VerticalKey { get; set; } = new List<int>();
 
     }
 }
