@@ -4,11 +4,10 @@ using System;
 
 namespace ChiperVertical
 {
-    partial class ChiperVerticalShiftEncryptor
+    partial class ChiperVerticalShiftMain
 	{
 		private ChiperVerticalShiftModel _chiperVerticalShiftModel = new ChiperVerticalShiftModel();
 		private ChiperVerticalShiftMatrixProperties _matrixProperties;
-
 
 		private string _textAfterManipulations = string.Empty;
 
@@ -31,12 +30,8 @@ namespace ChiperVertical
 			_chiperVerticalShiftModel.MatrixRowCount = _matrixProperties.RowCount;
 
 		}
-		/*
-		Функция шифрования\дешифрования 
-		при шифровании: перенос в строку столбца, номер которого соответствует ключу
-		при дешифровании: перенос в строку символа по-столбцам в соответствие с ключом
-		*/
-
+	
+		//Функция шифрования: перенос в строку столбца, номер которого соответствует ключу
 		private string GetEncryptedText()
 		{
 			for (int i = 1; i <= _chiperVerticalShiftModel.KeyLength; i++)
@@ -47,6 +42,7 @@ namespace ChiperVertical
 			return _textAfterManipulations;
 		}
 
+		//Функция дешифрования: перенос в строку символа по-столбцам в соответствие с ключом
 		private string GetDecryptedText()
 		{
 			for (int j = 0; j < _chiperVerticalShiftModel.MatrixRowCount; j++)
@@ -60,7 +56,7 @@ namespace ChiperVertical
 		public void ChiperVerticalShiftEncrytiption()
 		{
 			Console.Clear();
-			Console.WriteLine("ДОБРО ПОЖАЛОВАТЬ В ПРОГРАММУ ШИФРОВАНИЯ МЕТОДОМ ВЕРТИКАЛЬНОЙ ПЕРЕСТАНОВКИ\n\n");
+			Console.WriteLine("Welcome to Programm that demonstrate Vertical Shift Chiper encryption.\n\n");
 
 			GetPropertiesForVerticalChiperShift("Input text to be encrypted");
 
@@ -70,19 +66,12 @@ namespace ChiperVertical
 		public void ChiperVerticalShiftDecrytiption()
 		{
 			Console.Clear();
-			Console.WriteLine("ДОБРО ПОЖАЛОВАТЬ В ПРОГРАММУ ДЕШИФРОВАНИЯ МЕТОДОМ ВЕРТИКАЛЬНОЙ ПЕРЕСТАНОВКИ\n\n");
+			Console.WriteLine("Welcome to Programm that demonstrate Vertical Shift Chiper decryption.\n\n");
 
 			GetPropertiesForVerticalChiperShift("Input text to be decrypted");
 
-			_matrixProperties = new ChiperVerticalShiftMatrixProperties(_chiperVerticalShiftModel);
-
-			//_chiperVerticalShiftModel.MatrixForVerticalChiper = matrixProperties.GetDecriptionMatrix();
-
 			Console.WriteLine($"Decrypted word: { GetDecryptedText() }");
 		}
-
-		
-	
 
 	}
 

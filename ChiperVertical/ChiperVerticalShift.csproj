@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiperVertical.cs" />
+    <Compile Include="ChiperVerticalShiftMain.cs" />
     <Compile Include="IVerticalKeyValidationModel.cs" />
-    <Compile Include="KeyValidator.cs" />
-    <Compile Include="MatrixProperties.cs" />
-    <Compile Include="VerticalChiperModel.cs" />
+    <Compile Include="VerticalKeyValidator.cs" />
+    <Compile Include="ChiperVerticalShiftMatrixProperties.cs" />
+    <Compile Include="ChiperVerticalShiftModel.cs" />
     <Compile Include="VerticalKeyDuplicateCheck.cs" />
     <Compile Include="VerticalKeyInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

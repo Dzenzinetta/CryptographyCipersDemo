@@ -30,7 +30,7 @@ namespace ChiperVertical
 			return lengthProportions;
 		}
 
-		public char[,] GetEncriptionMatrix()
+		public char[,] GetEncryptionMatrix()
 		{
 			for (int i = 0, c = 0; i < RowCount; i++)
 			{
@@ -47,7 +47,7 @@ namespace ChiperVertical
 			return _model.MatrixForVerticalChiper;
 		}
 
-		public char[,] GetDecriptionMatrix()
+		public char[,] GetDecryptionMatrix()
 		{
 			for (int i = 0, c = 0; i < ColumnCount; i++)
 			{
