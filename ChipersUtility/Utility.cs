@@ -2,10 +2,11 @@
 
 namespace ChipersUtility
 {
-	class Other
+	public class Utility
 	{
 		private string _alphabet;
 		public const int AlphabetLength = 26;
+
 
 		public string GetAlphabet()
 		{

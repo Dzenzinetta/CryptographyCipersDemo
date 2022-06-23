@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace ConsoleUI
+namespace ChipersUtility
 {
-    class Program
+    public abstract class ChiperBaseModel
     {
+        public string TextFromConsole { get; set; }
 
-
-        static void Main(string[] args)
-        {
-        }
     }
 }

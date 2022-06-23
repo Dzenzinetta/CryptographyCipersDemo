@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiperBaseModel.cs" />
     <Compile Include="InputFromConsole.cs" />
     <Compile Include="InputFromConsoleValidator.cs" />
-    <Compile Include="Other.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
