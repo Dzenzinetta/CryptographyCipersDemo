@@ -4,30 +4,27 @@ namespace ChiperVertical
 {
 	public class ChiperVerticalShiftMatrixProperties
 	{
-		private int _textLength, _keyLength;
-		private string _textFromConsole;
-		private char[,] _matrix;
+		private ChiperVerticalShiftModel _model;
 
-		public int Columns, Rows;
+        public ChiperVerticalShiftMatrixProperties(ChiperVerticalShiftModel chiperVerticalShiftModel)
+        {
+            _model = chiperVerticalShiftModel;
+        }
 
-		public ChiperVerticalShiftMatrixProperties(ChiperVerticalShiftModel verticalChiperModel)
-		{
-			_textFromConsole = verticalChiperModel.TextFromConsole;
-			_textLength = verticalChiperModel.TextFromConsole.Length;
-			_keyLength = verticalChiperModel.VerticalKeyFromConsole.Count;
-		}
+        public int ColumnCount {get; set;}
+		public int RowCount {get; set;}
 
 		public void GetMatrixProperties()
 		{
-			Columns = _keyLength;
-			Rows = GetMatrixRowCount();
+			RowCount = GetMatrixRowCount();
+			ColumnCount = _model.KeyLength;
 		}
 
 		private int GetMatrixRowCount()
 		{
-			int lengthProportions = _textLength / _keyLength;
+			int lengthProportions = _model.TextLength / _model.KeyLength;
 
-			if (lengthProportions * _keyLength < _textLength)
+			if (lengthProportions * _model.KeyLength < _model.TextLength)
 				return lengthProportions + 1;
 
 			return lengthProportions;
@@ -35,31 +32,31 @@ namespace ChiperVertical
 
 		public char[,] GetEncriptionMatrix()
 		{
-			for (int i = 0, c = 0; i < Rows; i++)
+			for (int i = 0, c = 0; i < RowCount; i++)
 			{
-				for (int j = 0; j < Columns; j++, c++)
+				for (int j = 0; j < ColumnCount; j++, c++)
 				{
-					if (c >= _textLength)
+					if (c >= _model.TextLength)
 					{
-						_matrix[i, j] = 'X';
+						_model.MatrixForVerticalChiper[i, j] = 'X';
 						continue;
 					}
-					_matrix[i, j] = _textFromConsole[c];
+					_model.MatrixForVerticalChiper[i, j] = _model.TextFromConsole[c];
 				}
 			}
-			return _matrix;
+			return _model.MatrixForVerticalChiper;
 		}
 
 		public char[,] GetDecriptionMatrix()
 		{
-			for (int i = 0, c = 0; i < Columns; i++)
+			for (int i = 0, c = 0; i < ColumnCount; i++)
 			{
-				for (int j = 0; j < Rows; j++, c++)
+				for (int j = 0; j < RowCount; j++, c++)
 				{
-					_matrix[j, i] = _textFromConsole[c];
+					_model.MatrixForVerticalChiper[j, i] = _model.TextFromConsole[c];
 				}
 			}
-			return _matrix;
+			return _model.MatrixForVerticalChiper;
 		}
 
 	}
