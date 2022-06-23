@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32510.428
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{653BB70B-D0C6-45B2-AC26-5469D785AF3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipersUtility", "ChipersUtility\ChipersUtility.csproj", "{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperVerticalShift", "ChiperVertical\ChiperVerticalShift.csproj", "{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperAffine", "ChiperAffine\ChiperAffine.csproj", "{5F96C924-E6AD-4F1A-BB07-2F8589886543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperVigenere", "ChiperVigenere\ChiperVigenere.csproj", "{15B50D43-980E-42A8-A5A7-F18CDB4292ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperPlayfair", "ChiperPlayfair\ChiperPlayfair.csproj", "{3C78D99A-CC9F-45D6-8855-B472779AE0CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperHill", "ChiperHill\ChiperHill.csproj", "{60B432B4-68AE-4253-A6C1-1A75E87353C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F96C924-E6AD-4F1A-BB07-2F8589886543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F96C924-E6AD-4F1A-BB07-2F8589886543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F96C924-E6AD-4F1A-BB07-2F8589886543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F96C924-E6AD-4F1A-BB07-2F8589886543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B50D43-980E-42A8-A5A7-F18CDB4292ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B50D43-980E-42A8-A5A7-F18CDB4292ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B50D43-980E-42A8-A5A7-F18CDB4292ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B50D43-980E-42A8-A5A7-F18CDB4292ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C78D99A-CC9F-45D6-8855-B472779AE0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C78D99A-CC9F-45D6-8855-B472779AE0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C78D99A-CC9F-45D6-8855-B472779AE0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C78D99A-CC9F-45D6-8855-B472779AE0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B432B4-68AE-4253-A6C1-1A75E87353C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B432B4-68AE-4253-A6C1-1A75E87353C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B432B4-68AE-4253-A6C1-1A75E87353C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B432B4-68AE-4253-A6C1-1A75E87353C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -43,10 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiperAffine\ChiperAffine.cs" />
-    <Compile Include="ChiperHill\ChiperHill.cs" />
-    <Compile Include="ChiperPlayfair\ChiperPlayfair.cs" />
-    <Compile Include="ChiperVigenere\ChiperVigenere.cs" />
     <Compile Include="InputFromConsole.cs" />
     <Compile Include="InputFromConsoleValidator.cs" />
     <Compile Include="Other.cs" />
