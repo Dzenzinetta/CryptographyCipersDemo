@@ -2,20 +2,20 @@
 
 namespace ChipersUtility
 {
-	public class Utility
+	public static class Utility
 	{
-		private string _alphabet;
+		private static string _alphabet;
 		public const int AlphabetLength = 26;
 
 
-		public string GetAlphabet()
+		public static string GetAlphabet()
 		{
 			for (char a = 'A'; a <= 'Z'; a++)
 				_alphabet += a;
 			return _alphabet;
 		}
 
-		public int TextToCode(char input)
+		public static int TextToCode(char input)
 		{
 			for (int i = 0; i < AlphabetLength; i++)
 				if (input == _alphabet[i])
@@ -23,7 +23,7 @@ namespace ChipersUtility
 			return 0;
 		}
 
-		public char CodeToText(int input)
+		public static char CodeToText(int input)
 		{
 			for (int i = 0; i < AlphabetLength; i++)
 				if (input == i)
@@ -31,7 +31,7 @@ namespace ChipersUtility
 			return '\0';
 		}
 
-		public void OutputStringSymbolBySymbol(string messageForOutput)
+		public static void OutputStringSymbolBySymbol(string messageForOutput)
 		{
 			for (int i = 0; i < messageForOutput.Length; i++)
 				Console.Write("{0, -3}", messageForOutput[i]);

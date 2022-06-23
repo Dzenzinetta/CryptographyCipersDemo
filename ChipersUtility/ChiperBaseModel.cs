@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChipersUtility
 {
-    public abstract class ChiperBaseModel
+    public abstract class ChiperBaseModel : IChiperBaseModel
     {
         public string TextFromConsole { get; set; }
 

@@ -4,32 +4,45 @@ namespace ChiperAffine
 {
     public class ChiperAffineKeyValidator
     {
-		private readonly InputFromConsole _inputFromConsole = new InputFromConsole();
+		private readonly IInputFromConsole _inputFromConsole;
+		private int _addictiveKey, _multiplicativeKey;
 
-		public int AffineChiperKeyProcess(bool isAddictiveKey)
+        public ChiperAffineKeyValidator()
+        {
+			_inputFromConsole = UtilityControl.CreateInputFromConsole();
+		}
+
+		private int AffineChiperKeyProcess(string title)
 		{
-			 
-			bool isKeyGood = false;
-			int inputKey = 0;
-			while (!isKeyGood)
+			int inputKey;
+			bool isKeyGood;
+			do
 			{
-				inputKey = _inputFromConsole.GetInputForInteger($"Введите {(isAddictiveKey ? "аддивный" : "мультипликативный")} ключ");
+				inputKey = _inputFromConsole.GetIntegerInputFromConsole(title);
 
 				while (inputKey < 0)
 					inputKey += Utility.AlphabetLength;
+
+
 				isKeyGood = isAddictiveKey ?
 					AddictiveKeyCheck(inputKey) : MultiplicativeKeyCheck(inputKey);
 
 				if (!isKeyGood)
 					Console.WriteLine("Invalid Key!");
-			}
+			} while (!isKeyGood);
+			
 			return inputKey;
 		}
 
 		private int GetAddictiveKey()
-		{ }
+		{
+			_addictiveKey = AffineChiperKeyProcess($"Введите аддивный ключ");
+
+		}
 		private int GetMultiplicativeKey()
-		{ }
+		{
+			_multiplicativeKey = AffineChiperKeyProcess($"Введите мультипликативный ключ");
+		}
 
 		private bool AddictiveKeyCheck(int addictiveKey)
 		{

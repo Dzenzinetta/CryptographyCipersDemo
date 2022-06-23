@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ChipersUtility
 {
-    public class InputFromConsoleValidator
+    public static class InputFromConsoleValidator
     {
-		private bool IsInputContainZero(string inputKey)
+		private static bool IsInputContainZero(string inputKey)
 		{
 			return (inputKey.Contains("0"));
 		}
 
-		public string RemoveSpace(string strInput)
+		public static string RemoveSpace(string strInput)
 		{
 			string inputSpaceless = string.Empty;
 			for (int i = 0; i < strInput.Length; i++)
@@ -21,7 +21,7 @@ namespace ChipersUtility
 			return inputSpaceless;
 		}
 
-		public bool DigitalInputValidationPass(string input, out int result)
+		public static bool DigitalInputValidationPass(string input, out int result)
         {
             if (int.TryParse(input, out int tmpResult))
 			{
@@ -33,7 +33,7 @@ namespace ChipersUtility
 			return false;
         }
 
-		public bool StringIputValidationPass(string input)
+		public static bool StringIputValidationPass(string input)
 		{
 			if (string.IsNullOrWhiteSpace(input))
 			{
@@ -48,7 +48,7 @@ namespace ChipersUtility
 			return true;
 		}
 
-        public bool IsInputHaveRepeatedSymbol(string input, out int badSymbol)
+        public static bool IsInputHaveRepeatedSymbol(string input, out int badSymbol)
 		{
 			for (int i = 0; i < input.Length; i++)
 				for (int j = 0; j < input.Length; j++)

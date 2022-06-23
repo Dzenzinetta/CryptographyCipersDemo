@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ChipersUtility;
+using System.Collections.Generic;
 
 namespace ChiperVertical
 {
-    public class ChiperVerticalShiftModel
+    public class ChiperVerticalShiftModel : IChiperBaseModel
     {
         public string TextFromConsole { get; set; }
 

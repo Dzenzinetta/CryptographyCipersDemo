@@ -44,11 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiperBaseModel.cs" />
+    <Compile Include="IChiperBaseModel.cs" />
+    <Compile Include="IInputFromConsole.cs" />
     <Compile Include="InputFromConsole.cs" />
     <Compile Include="InputFromConsoleValidator.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

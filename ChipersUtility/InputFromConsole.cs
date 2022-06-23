@@ -1,35 +1,35 @@
 ﻿using System;
+using static ChipersUtility.InputFromConsoleValidator;
 
 namespace ChipersUtility
 {
-    public class InputFromConsole
+    public class InputFromConsole : IInputFromConsole
     {
-		private string _tmpInput = string.Empty;
-		private readonly InputFromConsoleValidator _validator = new InputFromConsoleValidator();
+        private string _tmpInput = string.Empty;
+     
+        public string GetStringInputFromConsole(string message)
+        {
+            do
+            {
+                Console.Write($"{message}: ");
+                _tmpInput = Console.ReadLine();
+            } while (StringIputValidationPass(_tmpInput) == false);
 
-		public string GetInputForString(string title)
-		{
-			do
-			{
-				Console.Write($"{ title }: ");
-				_tmpInput = Console.ReadLine();
-			} while (_validator.StringIputValidationPass(_tmpInput) == false);
+            return RemoveSpace(_tmpInput.ToUpper());
+        }
 
-			return _validator.RemoveSpace(_tmpInput.ToUpper());
-		}
+        public int GetIntegerInputFromConsole(string message)
+        {
+            int output = 0;
+            do
+            {
+                _tmpInput = GetStringInputFromConsole(message);
+                if (DigitalInputValidationPass(_tmpInput, out int result))
+                    output = result;
+            } while (output == 0);
 
-		public int GetInputForInteger(string title)
-		{
-			int output = 0;
-			do
-			{
-				_tmpInput = GetInputForString(title);
-				if (_validator.DigitalInputValidationPass(_tmpInput, out int result))
-					output = result;
-			} while (output == 0);
+            return output;
+        }
 
-			return output;
-		}
-
-	}
+    }
 }
