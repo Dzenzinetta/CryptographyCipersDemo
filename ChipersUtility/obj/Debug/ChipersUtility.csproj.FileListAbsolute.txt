@@ -10,3 +10,6 @@ G:\Другие компьютеры\Домашний компьютер\Classic
 G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
 G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
 G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe.config
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe
+G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\bin\Debug\ChipersUtility.pdb
