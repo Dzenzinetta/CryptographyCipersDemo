@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChiperAffine\AffineCiper.csproj">
+      <Project>{5f96c924-e6ad-4f1a-bb07-2f8589886543}</Project>
+      <Name>AffineCiper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

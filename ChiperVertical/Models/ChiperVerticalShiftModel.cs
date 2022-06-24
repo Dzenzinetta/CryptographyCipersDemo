@@ -7,6 +7,8 @@ namespace ChiperVertical
     {
         public string TextFromConsole { get; set; }
 
+        public string TextAfterChiperManipulations { get; set; }
+
         public int TextLength { get; set; }
 
         public List<int> VerticalKeyFromConsole { get; set; } = new List<int>();
@@ -18,6 +20,6 @@ namespace ChiperVertical
         public int MatrixColumnCount { get; set; }
 
         public int MatrixRowCount { get; set; }
-
+        
     }
 }

@@ -18,7 +18,7 @@ namespace ChipersUtility
 		public static int TextToCode(char input)
 		{
 			for (int i = 0; i < AlphabetLength; i++)
-				if (input == _alphabet[i])
+				if (input == GetAlphabet()[i])
 					return i;
 			return 0;
 		}
@@ -27,7 +27,7 @@ namespace ChipersUtility
 		{
 			for (int i = 0; i < AlphabetLength; i++)
 				if (input == i)
-					return _alphabet[i];
+					return GetAlphabet()[i];
 			return '\0';
 		}
 

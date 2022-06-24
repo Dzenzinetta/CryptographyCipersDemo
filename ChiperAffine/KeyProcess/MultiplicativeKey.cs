@@ -2,11 +2,11 @@
 
 namespace ChiperAffine
 {
-    public class MultiplicativeKey : AffineKeyBase
+    public class MultiplicativeKey : AffineKeyBase, IAffineKeyBase
     {
         public new int InputKey { get; set; }
 
-        public override string PromtMessage { get; } = "Input multiplicative key";
+        public override string PromtMessage { get; } = "Input Multiplicative key";
 
         public override bool IsKeyValid()
         {
@@ -14,9 +14,9 @@ namespace ChiperAffine
                 if (InputKey * j % Utility.AlphabetLength == 1)
                 {
                     Console.WriteLine("Key is not comprime with 26. Try again.");
-                    return true;
+                    return false;
                 }
-            return false;
+            return true;
         }
     }
 }

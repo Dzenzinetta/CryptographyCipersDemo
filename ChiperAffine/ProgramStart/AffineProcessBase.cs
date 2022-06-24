@@ -24,34 +24,32 @@ namespace ChiperAffine
         public abstract string Greeteengs { get; }
         public abstract string SymbolOutputTitle { get; }
 
-        public AffineKeyBase AdditiveKeyObject { get; set; }
-        public AffineKeyBase MultiplicativeKeyObject { get; set; }
-
-        public AffineCryptographyTypeBase AffineProcessObject { get; set; }
-
-        public IAffineBaseModel Model { get; set; }
-        public IInputFromConsole ConsoleInput { get; set; }
+        public abstract IAffineKeyBase AdditiveKeyObject { get; set; }
+        public abstract IAffineKeyBase MultiplicativeKeyObject { get; set; }
+        public abstract IAffineCryptographyTypeBase AffineProcessObject { get; set; }
+        public abstract IAffineBaseModel Model { get; set; }
+        public abstract IInputFromConsole ConsoleInput { get; set; }
 
 
 
         public void AffineMainProcess()
         {
             Console.Clear();
-            Console.WriteLine($"{ Greeteengs }");
+            Console.WriteLine($"{Greeteengs}");
 
             GetPropertiesForAffineChiper();
-            Console.WriteLine($"{ SymbolOutputTitle }");
+            Console.WriteLine($"{SymbolOutputTitle}");
 
             GetInverseMultiplicativeKeyForDecryption();
 
-            Console.WriteLine($"\nРезультат: { AffineProcessObject.AffineChiperProcess() }");
+            Console.WriteLine($"\nРезультат: {AffineProcessObject.AffineChiperProcess(Model)}");
         }
 
         private void GetPropertiesForAffineChiper()
         {
             Model.TextFromConsole = ConsoleInput.GetStringInputFromConsole("Введите слово, с которым будете работать");
-            Model.AddictiveKey = AdditiveKeyObject.KeyProcess();
-            Model.MultiplicativeKey = MultiplicativeKeyObject.KeyProcess();
+            Model.AddictiveKey = AdditiveKeyObject.KeyProcess(ConsoleInput);
+            Model.MultiplicativeKey = MultiplicativeKeyObject.KeyProcess(ConsoleInput);
         }
 
         public abstract void GetInverseMultiplicativeKeyForDecryption();

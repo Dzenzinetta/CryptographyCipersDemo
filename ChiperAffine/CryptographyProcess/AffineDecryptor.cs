@@ -2,15 +2,15 @@
 
 namespace ChiperAffine
 {
-    public class AffineDecryptor : AffineCryptographyTypeBase
+    public class AffineDecryptor : AffineCryptographyTypeBase, IAffineCryptographyTypeBase
     {
-        public override IAffineBaseModel Model { get; set; }
+        //public override IAffineBaseModel Model { get; set; }
 
-        public override int AffineSymbolManipulation(int wordCode)
+        public override int AffineSymbolManipulation(IAffineBaseModel model, int wordCode)
         {
-            if (wordCode >= Model.AddictiveKey)
-                return ((wordCode - Model.AddictiveKey) * Model.MultiplicativeKey) % Utility.AlphabetLength;
-            return ((wordCode + Utility.AlphabetLength - Model.AddictiveKey) * Model.MultiplicativeKey) % Utility.AlphabetLength;
+            if (wordCode >= model.AddictiveKey)
+                return ((wordCode - model.AddictiveKey) * model.MultiplicativeKey) % Utility.AlphabetLength;
+            return ((wordCode + Utility.AlphabetLength - model.AddictiveKey) * model.MultiplicativeKey) % Utility.AlphabetLength;
         }
     }
 }

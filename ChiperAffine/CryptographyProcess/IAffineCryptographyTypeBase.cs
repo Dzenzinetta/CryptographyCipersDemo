@@ -2,8 +2,8 @@
 {
     public interface IAffineCryptographyTypeBase
     {
-
-        string AffineChiperProcess();
-        int AffineSymbolManipulation(int wordCode);
+        //IAffineBaseModel Model { get; set; }
+        string AffineChiperProcess(IAffineBaseModel Model);
+        int AffineSymbolManipulation(IAffineBaseModel Model, int wordCode);
     }
 }

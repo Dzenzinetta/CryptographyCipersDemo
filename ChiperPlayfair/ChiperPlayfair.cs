@@ -4,7 +4,7 @@ namespace Crtypto_update
 {
 	class ChiperPlayfair
 	{
-
+		private IInputFromConsole _consoleInput = UtilityControl.CreateInputFromConsole();
 		//Other other = new Other();
 		PositionOfSymbolsOnMatrix position = new PositionOfSymbolsOnMatrix();
 
@@ -136,14 +136,14 @@ namespace Crtypto_update
 			Console.Clear();
 			Console.WriteLine("Welcome to Playfair encryptor");
 			Console.WriteLine();
-			strInputWord = other.TextBox("1. Enter word for encryption");
+			strInputWord = _consoleInput.GetStringInputFromConsole("1. Enter word for encryption");
 
-			do
-			{
-				strInputKey = other.TextBox("2. Enter key");
-				if (other.IsInputHaveRepeatedSymbol(strInputKey, out int badSymbol))
-					Console.WriteLine("Your key contains repeted symbol.\n\t Please, use non reapeated one");
-			} while (other.IsInputHaveRepeatedSymbol(strInputKey, out int noUsed));
+			//do
+			//{
+			//	strInputKey = _consoleInput.GetStringInputFromConsole("2. Enter key");
+			//	if (other.IsInputHaveRepeatedSymbol(strInputKey, out int badSymbol))
+			//		Console.WriteLine("Your key contains repeted symbol.\n\t Please, use non reapeated one");
+			//} while (other.IsInputHaveRepeatedSymbol(strInputKey, out int noUsed));
 
 			Console.WriteLine("\n3. Word divided by Bigramm (Pair of symbols):");
 			GetWordDevidedByBigramm();
@@ -159,10 +159,10 @@ namespace Crtypto_update
 			FillContainerForEncriptedWord();
 
 			Console.Write("\nOriginal word:\t");
-			other.OutputStringSymbolBySymbol(strInputWord);
+			//other.OutputStringSymbolBySymbol(strInputWord);
 
 			Console.Write("\nEncrypted word:\t");
-			other.OutputStringSymbolBySymbol(strEncryptedWord);
+			//other.OutputStringSymbolBySymbol(strEncryptedWord);
 			Console.WriteLine("\n");
 		}
 	}

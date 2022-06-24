@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ChipersUtility;
+
 namespace Crtypto_update
 {
 	class ChiperVigenere
 	{
-		Other other = new Other();
+		private IInputFromConsole _consoleInput = UtilityControl.CreateInputFromConsole();
+		//Other other = new Other();
 		int intWordCode,
 			intKeyCode;
 
@@ -29,22 +32,22 @@ namespace Crtypto_update
 				strKeyInput,
 				strOriginWordInput;
 
-			strOriginWordInput = other.TextBox("Введите слово, которое хотите зашифровать");
-			strKeyInput = other.TextBox("Введите ключ");
+			strOriginWordInput = _consoleInput.GetStringInputFromConsole("Введите слово, которое хотите зашифровать");
+			strKeyInput = _consoleInput.GetStringInputFromConsole("Введите ключ");
 
 			Console.WriteLine("Номер (по алфавиту) {0} буквы вашего слова",
 				isCripto ? "зашифрованной" : "расшифрованной");
 			Console.Write("\t\t");
 			for (int i = 0, z = 0; i < strOriginWordInput.Length; i++, z++)
 			{
-				intWordCode = other.TextToCode(strOriginWordInput[i]);
+				intWordCode = Utility.TextToCode(strOriginWordInput[i]);
 				if (z == strKeyInput.Length)
 					z = 0;
-				intKeyCode = other.TextToCode(strKeyInput[z]);
+				intKeyCode = Utility.TextToCode(strKeyInput[z]);
 				intWordCode = isCripto ? VigenereChiperCryptionProcess() :
 					VigenereChiperDecryptionProcess();
 				Console.Write("{0, -3}", intWordCode);
-				strEncryptedWord += other.CodeToText(intWordCode);
+				strEncryptedWord += Utility.CodeToText(intWordCode);
 			}
 			Console.Write("\nРезультат:\t");
 			for (int i = 0; i < strEncryptedWord.Length; i++)
@@ -53,30 +56,30 @@ namespace Crtypto_update
 
 		int VigenereChiperCryptionProcess()
 		{
-			return (intWordCode + intKeyCode) % Other.AlphabetLength;
+			return (intWordCode + intKeyCode) % Utility.AlphabetLength;
 		}
 
 		int VigenereChiperDecryptionProcess()
 		{
-			return (intWordCode + Other.AlphabetLength - intKeyCode) % Other.AlphabetLength;
+			return (intWordCode + Utility.AlphabetLength - intKeyCode) % Utility.AlphabetLength;
 		}
 
 		public void VigenereTableOutput()
 		{
-			string alphabetStrLower = other.AlphabetStr.ToLower();
+			string alphabetStrLower = Utility.GetAlphabet().ToLower();
 			Console.Clear();
 			Console.Write("   ");
-			for (int i = 0; i < Other.AlphabetLength; i++)
-				Console.Write("{0, -2}", other.AlphabetStr[i]);
+			for (int i = 0; i < Utility.AlphabetLength; i++)
+				Console.Write("{0, -2}", Utility.GetAlphabet()[i]);
 			Console.WriteLine();
-			for (int i = 0, k = 0; i < Other.AlphabetLength; i++, k++)
+			for (int i = 0, k = 0; i < Utility.AlphabetLength; i++, k++)
 			{
-				Console.Write("{0, -2}|", other.AlphabetStr[i]);
-				for (int j = 0; j < Other.AlphabetLength; j++)
+				Console.Write("{0, -2}|", Utility.GetAlphabet()[i]);
+				for (int j = 0; j < Utility.AlphabetLength; j++)
 				{
 					int positionShift = j + k;
 					if (j + k > 25)
-						positionShift %= Other.AlphabetLength;
+						positionShift %= Utility.AlphabetLength;
 					Console.Write("{0, -2}", alphabetStrLower[positionShift]);
 				}
 				Console.WriteLine();

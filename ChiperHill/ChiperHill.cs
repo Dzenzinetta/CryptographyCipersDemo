@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChipersUtility;
 
 namespace Crtypto_update
 {
     class ChiperHill
 	{
+
+		private IInputFromConsole _consoleInput = UtilityControl.CreateInputFromConsole();
+
 		private const int AvailableLengthForHillChiper = 3;
 		private int[,] matrixKey;
 		private string strEncryptedWord = string.Empty,
 				strOriginWord = string.Empty;
 		private int[,] columnWordCode,
 				columnEncryptedCode;
-		Other other = new Other();
+		//Other other = new Other();
+
+
 
 		public ChiperHill()
 		{
@@ -34,7 +35,7 @@ namespace Crtypto_update
 
 			do
 			{
-				strOriginWord = other.TextBox("Введите слово, которое хотите зашифровать (3 символа)");
+				strOriginWord = _consoleInput.GetStringInputFromConsole("Введите слово, которое хотите зашифровать (3 символа)");
 				if (strOriginWord.Length != AvailableLengthForHillChiper)
 					Console.WriteLine("Invalid Key");
 			} while (strOriginWord.Length != AvailableLengthForHillChiper);
@@ -46,10 +47,10 @@ namespace Crtypto_update
 			HillChiperCtyptoProcess();
 
 			Console.Write("\nOriginal word:\t");
-			other.OutputStringSymbolBySymbol(strOriginWord);
+			//other.OutputStringSymbolBySymbol(strOriginWord);
 
 			Console.Write("\nEncrypted word:\t");
-			other.OutputStringSymbolBySymbol(strEncryptedWord);
+			//other.OutputStringSymbolBySymbol(strEncryptedWord);
 			Console.WriteLine();
 		}
 
@@ -67,7 +68,7 @@ namespace Crtypto_update
 		void GetColumnWordCode()
 		{
 			for (int i = 0; i < strOriginWord.Length; i++)
-				columnWordCode[i, 0] = other.TextToCode(strOriginWord[i]);
+				columnWordCode[i, 0] = Utility.TextToCode(strOriginWord[i]);
 		}
 
 		void HillChiperCtyptoProcess()
@@ -78,8 +79,8 @@ namespace Crtypto_update
 				rezult = 0;
 				for (int j = 0; j < strOriginWord.Length; j++)
 					rezult += (matrixKey[i, j] * columnWordCode[j, 0]);
-				columnEncryptedCode[i, 0] = rezult % Other.AlphabetLength;
-				strEncryptedWord += other.CodeToText(columnEncryptedCode[i, 0]);
+				columnEncryptedCode[i, 0] = rezult % Utility.AlphabetLength;
+				strEncryptedWord += Utility.CodeToText(columnEncryptedCode[i, 0]);
 			}
 		}
 

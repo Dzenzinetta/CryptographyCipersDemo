@@ -4,15 +4,17 @@ namespace ChiperAffine
 {
     public interface IAffineProcessBase
     {
-        AffineKeyBase AdditiveKeyObject { get; set; }
+        IAffineKeyBase AdditiveKeyObject { get; set; }
 
-        AffineKeyBase MultiplicativeKeyObject { get; set; }
+        IAffineKeyBase MultiplicativeKeyObject { get; set; }
 
-        AffineCryptographyTypeBase AffineProcessObject { get; set; }
+        IAffineCryptographyTypeBase AffineProcessObject { get; set; }
 
         IAffineBaseModel Model { get; set; }
 
         IInputFromConsole ConsoleInput { get; set; }
+
+        public void AffineMainProcess();
 
         //string Greeteengs { get; }
 

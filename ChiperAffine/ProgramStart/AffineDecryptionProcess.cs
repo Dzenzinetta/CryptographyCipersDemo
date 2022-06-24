@@ -18,13 +18,11 @@ namespace ChiperAffine
             $"For that you need to have two key's: Additive and Multiplicative\n\n";
         public override string SymbolOutputTitle { get; } = $"Index (by Alphabet) of Decrypted text: ";
 
-        public new AffineKeyBase AdditiveKeyObject { get; set; }
-        public new AffineKeyBase MultiplicativeKeyObject { get; set; }
-
-        public new AffineCryptographyTypeBase AffineProcessObject { get; set; }
-
-        public new IAffineBaseModel Model { get; set; }
-        public new IInputFromConsole ConsoleInput { get; set; }
+        public override IAffineKeyBase AdditiveKeyObject { get; set; }
+        public override IAffineKeyBase MultiplicativeKeyObject { get; set; }
+        public override IAffineCryptographyTypeBase AffineProcessObject { get; set; }
+        public override IAffineBaseModel Model { get; set; }
+        public override IInputFromConsole ConsoleInput { get; set; }
 
         public override void GetInverseMultiplicativeKeyForDecryption()
         {

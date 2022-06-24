@@ -50,7 +50,7 @@ namespace ChiperVertical
 				{
 					string tmpTitle = $"Input {i + 1} - symbol from {verticalKeyModel.AllowedKeyLengthForVerticalChiper} and press Enter";
 
-					verticalKeyModel.SingleElementOfVerticalKey = inputFromConsole.GetInputForInteger(tmpTitle);
+					verticalKeyModel.SingleElementOfVerticalKey = inputFromConsole.GetIntegerInputFromConsole(tmpTitle);
 
 					verticalKeyModel.VerticalKey.Insert(i, verticalKeyModel.SingleElementOfVerticalKey);
 

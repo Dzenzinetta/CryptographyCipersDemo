@@ -2,7 +2,7 @@
 
 namespace ChiperAffine
 {
-    public class AdditiveKey : AffineKeyBase
+    public class AdditiveKey : AffineKeyBase, IAffineKeyBase
     {
         public new int InputKey { get; set; }
 

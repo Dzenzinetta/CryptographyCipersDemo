@@ -13,9 +13,9 @@ namespace ChiperVertical
 
 		private void GetPropertiesForVerticalChiperShift(string titleForConsole)
 		{
-			InputFromConsole inputFromConsole = new InputFromConsole();
+			IInputFromConsole inputFromConsole = new InputFromConsole();
 
-			_chiperVerticalShiftModel.TextFromConsole = inputFromConsole.GetInputForString(titleForConsole);
+			_chiperVerticalShiftModel.TextFromConsole = inputFromConsole.GetStringInputFromConsole(titleForConsole);
 			_chiperVerticalShiftModel.TextLength = _chiperVerticalShiftModel.TextFromConsole.Length;
 
 			VerticalKeyInput verticalKeyInput = new VerticalKeyInput(_chiperVerticalShiftModel.TextLength);
