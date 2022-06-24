@@ -2,24 +2,18 @@
 
 namespace ChiperAffine
 {
-    public abstract class AffineKeyBase : IAffineKeyBase
+    public abstract class AffineKeyBase// : IAffineKeyBase
     {
-        private readonly IInputFromConsole _inputFromConsole;
 
         public int InputKey { get; set; }
 
-        public string PromtMessage { get; }
+        public abstract string PromtMessage { get; }
 
-        public AffineKeyBase()
-        {
-            _inputFromConsole = UtilityControl.CreateInputFromConsole();
-        }
-
-        public int KeyProcess()
+        public int KeyProcess(IInputFromConsole input)
         {
             do
             {
-                InputKey = _inputFromConsole.GetIntegerInputFromConsole(PromtMessage);
+                InputKey = input.GetIntegerInputFromConsole(PromtMessage);
 
                 while (InputKey < 0)
                     InputKey += Utility.AlphabetLength;

@@ -2,17 +2,17 @@
 
 namespace ChiperAffine
 {
-    internal class AdditiveKey : AffineKeyBase, IAffineKeyBase
+    public class AdditiveKey : AffineKeyBase
     {
         public new int InputKey { get; set; }
 
-        public new string PromtMessage { get; } = "Input Additive key";
+        public override string PromtMessage { get; } = "Input Additive key";
 
         public override bool IsKeyValid()
         {
             if (InputKey == 1)
             {
-                Console.WriteLine("Additive key must vary from 1. Try again!");
+                Console.WriteLine("Additive key must differ from 1. Try again!");
                 return false;
             }
             return true;

@@ -2,11 +2,11 @@
 
 namespace ChiperAffine
 {
-    internal class MultiplicativeKey : AffineKeyBase, IAffineKeyBase
+    public class MultiplicativeKey : AffineKeyBase
     {
         public new int InputKey { get; set; }
 
-        public new string PromtMessage { get; } = "Input multiplicative key";
+        public override string PromtMessage { get; } = "Input multiplicative key";
 
         public override bool IsKeyValid()
         {

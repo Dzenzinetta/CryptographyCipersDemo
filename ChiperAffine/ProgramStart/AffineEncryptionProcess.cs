@@ -2,7 +2,7 @@
 
 namespace ChiperAffine
 {
-    public class AffineEncryptionProcess : AffineProcessBase//, IAffineProcessBase
+    public class AffineEncryptionProcess : AffineProcessBase, IAffineProcessBase
     {
         //private IAffineBaseModel _model;
         //public AffineEncryptionProcess(IAffineProcessBase processBase)
@@ -19,13 +19,13 @@ namespace ChiperAffine
         public override string SymbolOutputTitle { get; } = $"Index (by Alphabet) of Encrypted text: ";
 
 
-        public override AffineKeyBase AdditiveKeyObject { get; set; }
-        public override AffineKeyBase MultiplicativeKeyObject { get; set; }
+        public new AffineKeyBase AdditiveKeyObject { get; set; }
+        public new AffineKeyBase MultiplicativeKeyObject { get; set; }
 
-        public override AffineCryptographyTypeBase AffineProcessObject { get; set; }
+        public new AffineCryptographyTypeBase AffineProcessObject { get; set; }
 
-        public override IAffineBaseModel Model { get; set; }
-        public override IInputFromConsole ConsoleInput { get; set; }
+        public new IAffineBaseModel Model { get; set; }
+        public new IInputFromConsole ConsoleInput { get; set; }
 
         public override void GetInverseMultiplicativeKeyForDecryption()
         {

@@ -24,13 +24,13 @@ namespace ChiperAffine
         public abstract string Greeteengs { get; }
         public abstract string SymbolOutputTitle { get; }
 
-        public abstract AffineKeyBase AdditiveKeyObject { get; set; }
-        public abstract AffineKeyBase MultiplicativeKeyObject { get; set; }
+        public AffineKeyBase AdditiveKeyObject { get; set; }
+        public AffineKeyBase MultiplicativeKeyObject { get; set; }
 
-        public abstract AffineCryptographyTypeBase AffineProcessObject { get; set; }
+        public AffineCryptographyTypeBase AffineProcessObject { get; set; }
 
-        public abstract IAffineBaseModel Model { get; set; }
-        public abstract IInputFromConsole ConsoleInput { get; set; }
+        public IAffineBaseModel Model { get; set; }
+        public IInputFromConsole ConsoleInput { get; set; }
 
 
 
