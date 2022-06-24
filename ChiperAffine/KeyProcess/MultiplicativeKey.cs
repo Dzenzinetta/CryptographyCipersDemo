@@ -10,8 +10,8 @@ namespace ChiperAffine
 
         public override bool IsKeyValid()
         {
-            for (int j = 0; j < Utility.AlphabetLength; j++)
-                if (InputKey * j % Utility.AlphabetLength == 1)
+            for (int i = 0; i < Utility.AlphabetLength; i++)
+                if ((InputKey * i) % Utility.AlphabetLength == 1)
                 {
                     Console.WriteLine("Key is not comprime with 26. Try again.");
                     return false;

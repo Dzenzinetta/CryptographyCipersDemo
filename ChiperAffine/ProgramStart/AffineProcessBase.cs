@@ -4,25 +4,14 @@ namespace ChiperAffine
 {
     public abstract class AffineProcessBase : IAffineProcessBase
     {
-        //private AffineKeyBase _additiveKeyObject;
-        //private AffineKeyBase _multiplicativeKeyObject;
-
-        //private AffineCryptographyTypeBase _affineProcessObject;
-
-        //private IAffineBaseModel _model;
-        //private IInputFromConsole _inputFromConsole;
-
-        //public AffineProcessBase(AffineCryptographyTypeBase cryptographyBase, IAffineBaseModel affine)
-        //{
-        //    _inputFromConsole = UtilityControl.CreateInputFromConsole();
-        //    _additiveKeyObject = new AdditiveKey();
-        //    _multiplicativeKeyObject = new MultiplicativeKey();
-        //    _model = affine;
-        //    _affineProcessObject = cryptographyBase;
-        //}
-
+       
         public abstract string Greeteengs { get; }
         public abstract string SymbolOutputTitle { get; }
+        public string Rules { get; } = "Please, read Rules before start working with Ciper:\n" +
+            "1) Text: There is no specific limitation for text, but do not use Very long one, just because it will not contain Console Line\n" +
+            "2) Additive key: it is a \"Shift\" of your key, so it could be arbitrary\n" +
+            "3) Multiplicative key: must! be comprime to 26 (Length of Alphabet). For example: 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25\n\n" +
+            "That's all Rules. Press any key to continue...\n";
 
         public abstract IAffineKeyBase AdditiveKeyObject { get; set; }
         public abstract IAffineKeyBase MultiplicativeKeyObject { get; set; }
@@ -31,11 +20,13 @@ namespace ChiperAffine
         public abstract IInputFromConsole ConsoleInput { get; set; }
 
 
-
         public void AffineMainProcess()
         {
             Console.Clear();
             Console.WriteLine($"{Greeteengs}");
+
+            Console.WriteLine($"{Rules}");
+            Console.ReadKey();
 
             GetPropertiesForAffineChiper();
             Console.WriteLine($"{SymbolOutputTitle}");
@@ -47,7 +38,7 @@ namespace ChiperAffine
 
         private void GetPropertiesForAffineChiper()
         {
-            Model.TextFromConsole = ConsoleInput.GetStringInputFromConsole("Введите слово, с которым будете работать");
+            Model.TextFromConsole = ConsoleInput.GetStringInputFromConsole("Input text");
             Model.AddictiveKey = AdditiveKeyObject.KeyProcess(ConsoleInput);
             Model.MultiplicativeKey = MultiplicativeKeyObject.KeyProcess(ConsoleInput);
         }

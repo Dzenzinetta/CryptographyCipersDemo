@@ -16,8 +16,5 @@ namespace ChiperAffine
 
         public void AffineMainProcess();
 
-        //string Greeteengs { get; }
-
-        //string SymbolOutputTitle { get; }
     }
 }

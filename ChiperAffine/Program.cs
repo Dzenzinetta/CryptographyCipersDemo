@@ -11,11 +11,6 @@ namespace ChiperAffine
         public static void Main()
         {
 
-            Console.WriteLine("Hello World");
-            Console.ReadKey();
-
-            //IAffineProcessBase encryptionBase = new
-
             IAffineProcessBase affineEncryption = Factory.CreateEncryptionProcess();
 
             affineEncryption.AdditiveKeyObject = Factory.CreateAdditiveKey();
@@ -26,6 +21,7 @@ namespace ChiperAffine
 
             affineEncryption.AffineMainProcess();
 
+            Console.ReadKey();
 
         }
 
