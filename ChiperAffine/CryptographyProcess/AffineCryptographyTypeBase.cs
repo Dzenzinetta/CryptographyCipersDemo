@@ -2,11 +2,11 @@
 
 namespace ChiperAffine
 {
-    public abstract class ChiperAffineManipulationBase
+    public abstract class AffineCryptographyTypeBase
     {
-		private IChiperAffineBaseModel _affine;
+		private IAffineBaseModel _affine;
 
-		public ChiperAffineManipulationBase(IChiperAffineBaseModel model)
+		public AffineCryptographyTypeBase(IAffineBaseModel model)
         {
 			_affine = model;
 		}
@@ -18,7 +18,7 @@ namespace ChiperAffine
 			for (int i = 0; i < _affine.TextFromConsole.Length; i++)
 			{
 				wordCode = Utility.TextToCode(_affine.TextFromConsole[i]);
-				cryptedWordCode = AffineChiperManipulation(wordCode);
+				cryptedWordCode = AffineSymbolManipulation(wordCode);
 				_wordAfterEncryption += Utility.CodeToText(cryptedWordCode);
 				
 				Console.Write("{0, -3}", cryptedWordCode);
@@ -26,7 +26,7 @@ namespace ChiperAffine
 			return _wordAfterEncryption;
 		}
 
-		public abstract int AffineChiperManipulation(int wordCode);
+		public abstract int AffineSymbolManipulation(int wordCode);
 
 	}
 }

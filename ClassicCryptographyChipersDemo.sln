@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipersUtility", "ChipersUt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperVerticalShift", "ChiperVertical\ChiperVerticalShift.csproj", "{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperAffine", "ChiperAffine\ChiperAffine.csproj", "{5F96C924-E6AD-4F1A-BB07-2F8589886543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AffineCiper", "ChiperAffine\AffineCiper.csproj", "{5F96C924-E6AD-4F1A-BB07-2F8589886543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperVigenere", "ChiperVigenere\ChiperVigenere.csproj", "{15B50D43-980E-42A8-A5A7-F18CDB4292ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiperVigenere", "ChiperVigenere\ChiperVigenere.csproj", "{15B50D43-980E-42A8-A5A7-F18CDB4292ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperPlayfair", "ChiperPlayfair\ChiperPlayfair.csproj", "{3C78D99A-CC9F-45D6-8855-B472779AE0CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiperPlayfair", "ChiperPlayfair\ChiperPlayfair.csproj", "{3C78D99A-CC9F-45D6-8855-B472779AE0CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperHill", "ChiperHill\ChiperHill.csproj", "{60B432B4-68AE-4253-A6C1-1A75E87353C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiperHill", "ChiperHill\ChiperHill.csproj", "{60B432B4-68AE-4253-A6C1-1A75E87353C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

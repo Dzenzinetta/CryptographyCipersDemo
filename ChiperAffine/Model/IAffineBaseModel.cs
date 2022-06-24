@@ -2,7 +2,7 @@
 
 namespace ChiperAffine
 {
-    public interface IChiperAffineBaseModel : IChiperBaseModel
+    public interface IAffineBaseModel : IChiperBaseModel
     {
         int AddictiveKey { get; set; }
         int MultiplicativeKey { get; set; }

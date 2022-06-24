@@ -4,24 +4,18 @@ namespace ChiperAffine
 {
     class ChiperAffine
     {
-		private ChiperAffineKeyBase _addictiveKeyObject;
-		private ChiperAffineKeyBase _multiplicativeKeyObject;
+		private AffineKeyBase _additiveKeyObject;
+		private AffineKeyBase _multiplicativeKeyObject;
 
-		//private ChiperAffineManipulationBase _encryptionObject;
-		//private ChiperAffineManipulationBase _decryptionObject;
-
-		private IChiperAffineBaseModel _affine;
+		private IAffineBaseModel _affine;
 		private IInputFromConsole _inputFromConsole;
-
-		private int addictiveKey, multiplicativeKey;
-		string originalWord = string.Empty;
 
         public ChiperAffine()
         {
 			_inputFromConsole = UtilityControl.CreateInputFromConsole();
-			_addictiveKeyObject = new ChiperAffineAddictiveKey();
-			_multiplicativeKeyObject = new ChiperAffineMultiplicativeKey();
-			_affine = new ChiperAffineBaseModel();
+			_additiveKeyObject = new AdditiveKey();
+			_multiplicativeKeyObject = new MultiplicativeKey();
+			_affine = new AffineBaseModel();
 		}
 
 		public void ChiperAffineEncryption()
@@ -31,8 +25,9 @@ namespace ChiperAffine
 			GetPropertiesForAffineChiper();
 			Console.WriteLine($"Номер (по алфавиту) буквы зашифрованного слова: ");
 
-			ChiperAffineManipulationBase encryptionObject = new ChiperAffineEncryptor(_affine);
-			Console.WriteLine("\nРезультат: {0}", encryptionObject.AffineChiperProcess();
+			AffineCryptographyTypeBase encryptionObject = new AffineEncryptor(_affine);
+
+			Console.WriteLine($"\nРезультат: { encryptionObject.AffineChiperProcess() }");
 		}
 
 		public void ChiperAffineDecryption()
@@ -43,17 +38,17 @@ namespace ChiperAffine
 			Console.WriteLine($"Номер (по алфавиту) буквы расшифрованного слова: ");
 
 			GetInverseKey();
+			AffineCryptographyTypeBase decryptionObject = new AffineDecryptor(_affine);
 
-			ChiperAffineManipulationBase decryptionObject = new ChiperAffineDecryptor(_affine);
-			Console.WriteLine("\nРезультат: {0}", decryptionObject.AffineChiperProcess());
+			Console.WriteLine($"\nРезультат: { decryptionObject.AffineChiperProcess() }");
 		}
 
 
 		private void GetPropertiesForAffineChiper()
 		{
 			_affine.TextFromConsole	= _inputFromConsole.GetStringInputFromConsole("Введите слово, с которым будете работать");
-			_affine.AddictiveKey = _addictiveKeyObject.KeyProcess("Input addictive key");
-			_affine.MultiplicativeKey = _multiplicativeKeyObject.KeyProcess("Input multiplicative key");
+			_affine.AddictiveKey = _additiveKeyObject.KeyProcess();
+			_affine.MultiplicativeKey = _multiplicativeKeyObject.KeyProcess();
 		}
 
 		private void GetInverseKey()
@@ -62,9 +57,6 @@ namespace ChiperAffine
 				if ((_affine.MultiplicativeKey * i % Utility.AlphabetLength) == 1)
 					_affine.MultiplicativeKey = i;	
 		}
-
-		
-		
 
 	}
 }

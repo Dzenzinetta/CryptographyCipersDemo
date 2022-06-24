@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChipersUtility;
 
 namespace Crtypto_update
 {
 	class ChiperPlayfair
 	{
-		Other other = new Other();
+
+		//Other other = new Other();
 		PositionOfSymbolsOnMatrix position = new PositionOfSymbolsOnMatrix();
 
 		char[,] keyMatrix = new char[5, 5];
@@ -18,7 +15,7 @@ namespace Crtypto_update
 				strInputKey = string.Empty,
 				strInputWord = string.Empty;
 
-		struct PositionOfSymbolsOnMatrix
+		public struct PositionOfSymbolsOnMatrix
 		{
 			public int[] positionI, positionJ;
 
@@ -46,11 +43,11 @@ namespace Crtypto_update
 
 		void GetKeyAlphabetMatrix()
 		{
-			for (int i = 0; i < Other.AlphabetLength; i++)
+			for (int i = 0; i < Utility.AlphabetLength; i++)
 			{
-				if (other.AlphabetStr[i] == 'J') continue;
-				if (!strInputKey.Contains(other.AlphabetStr[i]))
-					strInputKey += other.AlphabetStr[i];
+				if (Utility.GetAlphabet()[i] == 'J') continue;
+				if (strInputKey.Contains(Utility.GetAlphabet()[i]) == false)
+					strInputKey += Utility.GetAlphabet()[i];
 			}
 		}
 

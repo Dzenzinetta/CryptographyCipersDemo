@@ -10,5 +10,6 @@ namespace ChipersUtility
     {
         public string TextFromConsole { get; set; }
 
+        public string TextAfterChiperManipulations { get; set; }
     }
 }
