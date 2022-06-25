@@ -6,7 +6,7 @@ namespace ChiperAffine
     {
         public override string Greeteengs { get; } = $"Welcome to the Programm demonstration of Affine Ciper algorithm\n" +
             $"In this proramm you will encrypt your text by following algorythm.\n";
-        public override string SymbolOutputTitle { get; } = $"Index (by Alphabet) of Encrypted text:";
+        public override string SymbolOutputTitle { get; } = $"Index (by Alphabet) of Encrypted text and Encrypted word:\n";
 
 
         public override IAffineKeyBase AdditiveKeyObject { get; set; }

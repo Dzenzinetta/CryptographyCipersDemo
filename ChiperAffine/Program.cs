@@ -22,6 +22,8 @@ namespace ChiperAffine
             affineEncryption.AffineMainProcess();
 
             Console.ReadKey();
+            Environment.Exit(0);
+
 
         }
 
