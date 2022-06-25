@@ -1,6 +1,6 @@
 ﻿using ChipersUtility;
 
-namespace ChiperAffine
+namespace AffineCiper
 {
     public interface IAffineProcessBase
     {

@@ -1,6 +1,6 @@
 ﻿using ChipersUtility;
 
-namespace ChiperAffine
+namespace AffineCiper
 {
     public abstract class AffineProcessBase : IAffineProcessBase
     {
@@ -32,8 +32,10 @@ namespace ChiperAffine
             Console.WriteLine($"{SymbolOutputTitle}");
 
             GetInverseMultiplicativeKeyForDecryption();
+            AffineProcessObject.AffineChiperProcess(Model);
 
-            Console.WriteLine($"\nРезультат: {AffineProcessObject.AffineChiperProcess(Model)}");
+            Console.WriteLine($"\n\nPress any key to continue...");
+            Console.ReadKey();
         }
 
         private void GetPropertiesForAffineChiper()

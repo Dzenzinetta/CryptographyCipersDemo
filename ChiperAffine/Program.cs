@@ -1,35 +1,16 @@
-﻿using AffineCiper;
-using ChipersUtility;
+﻿using ChipersUtility;
 
-namespace ChiperAffine
+
+namespace AffineCiper
 {
-    public class Programm
+    public class Program
     {
-        //public AffineProcessBase AffineEncryption = new AffineDecryptionProcess();
-
-        
         public static void Main()
         {
-
-            IAffineProcessBase affineEncryption = Factory.CreateEncryptionProcess();
-
-            affineEncryption.AdditiveKeyObject = Factory.CreateAdditiveKey();
-            affineEncryption.MultiplicativeKeyObject = Factory.CreateMultiplicativeKey();
-            affineEncryption.AffineProcessObject = Factory.GetAffineEncryptor();
-            affineEncryption.Model = Factory.CreateAffineModel();
-            affineEncryption.ConsoleInput = UtilityControl.CreateInputFromConsole();
-
-            affineEncryption.AffineMainProcess();
-
-            Console.ReadKey();
-            Environment.Exit(0);
-
-
+            IConsoleMenuBase newMenu = new AffineCiperMenu();
+        
+            newMenu.RunMenu();
         }
 
     }
-
-
 }
-
-

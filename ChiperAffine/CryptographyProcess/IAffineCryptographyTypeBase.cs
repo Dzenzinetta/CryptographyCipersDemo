@@ -1,9 +1,9 @@
-﻿namespace ChiperAffine
+﻿namespace AffineCiper
 {
     public interface IAffineCryptographyTypeBase
     {
-        //IAffineBaseModel Model { get; set; }
-        string AffineChiperProcess(IAffineBaseModel Model);
+        string OutputMessage { get; }
+        void AffineChiperProcess(IAffineBaseModel Model);
         int AffineSymbolManipulation(IAffineBaseModel Model, int wordCode);
     }
 }

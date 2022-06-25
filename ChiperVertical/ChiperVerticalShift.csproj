@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\VerticalKeyModel.cs" />
     <Compile Include="VerticalKey\Validations\VerticalKeySymbolExceed.cs" />
+    <Compile Include="VerticalShiftCiperMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
