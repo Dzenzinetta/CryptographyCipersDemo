@@ -7,6 +7,10 @@ namespace ChipersUtility
 		private static string _alphabet;
 		public const int AlphabetLength = 26;
 
+		public static void ResetCursorVisible()
+		{
+			Console.CursorVisible = Console.CursorVisible != true;
+		}
 
 		public static string GetAlphabet()
 		{

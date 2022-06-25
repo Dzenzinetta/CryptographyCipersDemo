@@ -25,17 +25,13 @@ namespace ChipersUtility
         public void RunMenu()
         {
             Console.Title = ProgramTitle + "Ciper demonstration program";
-            ResetCursorVisible();
+            //ResetCursorVisible();
             FillMenuList();
             
             SelectedOption = GetOptionFromMenu();
             MenuSelector();   
         }
-
-        public void ResetCursorVisible()
-        {
-            Console.CursorVisible = Console.CursorVisible != true;
-        }
+    
 
         private string GetOptionCentered(string rawOption)
         {

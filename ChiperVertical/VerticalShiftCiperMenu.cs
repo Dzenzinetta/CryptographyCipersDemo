@@ -19,7 +19,7 @@ namespace ChiperVerticalShift
 
         public override void MenuSelector()
         {
-            ResetCursorVisible();
+            Utility.ResetCursorVisible();
 
             //switch (SelectedOption)
             //{

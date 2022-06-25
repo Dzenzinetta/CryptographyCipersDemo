@@ -23,7 +23,7 @@ namespace AffineCiper
 
         public override void MenuSelector()
         {
-            ResetCursorVisible();
+            Utility.ResetCursorVisible();
             switch (SelectedOption)
             {
                 case 0:

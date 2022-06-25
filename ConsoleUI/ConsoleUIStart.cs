@@ -27,6 +27,8 @@ namespace ConsoleUI
         public static void RunMainMenu()
         {
             IConsoleMenuBase main = ConsoleUIFactory.CreateMainMenu();
+            Utility.ResetCursorVisible();
+
             main.RunMenu();
         }
         private static void SetWindowSize()

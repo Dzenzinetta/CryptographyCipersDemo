@@ -4,7 +4,7 @@ namespace AffineCiper
 {
     public class AdditiveKey : AffineKeyBase, IAffineKeyBase
     {
-        public new int InputKey { get; set; }
+        public override int InputKey { get; set; }
 
         public override string PromtMessage { get; } = "Input Additive key";
 

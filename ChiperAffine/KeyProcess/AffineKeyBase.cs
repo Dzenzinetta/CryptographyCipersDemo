@@ -5,7 +5,7 @@ namespace AffineCiper
     public abstract class AffineKeyBase// : IAffineKeyBase
     {
 
-        public int InputKey { get; set; }
+        public abstract int InputKey { get; set; }
 
         public abstract string PromtMessage { get; }
 
