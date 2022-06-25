@@ -6,6 +6,7 @@ namespace AffineCiper
         public IAffineProcessBase CryptoType { get; }
         
         IAffineCryptographyTypeBase GetProcessType();
+
         void StartAffineCiperProgramm();
     }
 }
