@@ -1,8 +1,8 @@
 ﻿using ChipersUtility;
 
-namespace Crtypto_update
+namespace PlayfairCiper
 {
-	class ChiperPlayfair
+	public class PlayfairCiperMain
 	{
 		private IInputFromConsole _consoleInput = UtilityControl.CreateInputFromConsole();
 		//Other other = new Other();
@@ -138,14 +138,14 @@ namespace Crtypto_update
 			Console.WriteLine();
 			strInputWord = _consoleInput.GetStringInputFromConsole("1. Enter word for encryption");
 
-			//do
-			//{
-			//	strInputKey = _consoleInput.GetStringInputFromConsole("2. Enter key");
-			//	if (other.IsInputHaveRepeatedSymbol(strInputKey, out int badSymbol))
-			//		Console.WriteLine("Your key contains repeted symbol.\n\t Please, use non reapeated one");
-			//} while (other.IsInputHaveRepeatedSymbol(strInputKey, out int noUsed));
+            //do
+            //{
+            //    strInputKey = _consoleInput.GetStringInputFromConsole("2. Enter key");
+            //    if (other.IsInputHaveRepeatedSymbol(strInputKey, out int badSymbol))
+            //        Console.WriteLine("Your key contains repeted symbol.\n\t Please, use non reapeated one");
+            //} while (other.IsInputHaveRepeatedSymbol(strInputKey, out int noUsed));
 
-			Console.WriteLine("\n3. Word divided by Bigramm (Pair of symbols):");
+            Console.WriteLine("\n3. Word divided by Bigramm (Pair of symbols):");
 			GetWordDevidedByBigramm();
 			position.Declaring(strWordDividedByBigramm.Length);
 			OutputWordDividedByBigramm();

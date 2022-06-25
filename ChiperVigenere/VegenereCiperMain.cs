@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChipersUtility;
 
-using ChipersUtility;
-
-namespace Crtypto_update
+namespace VegenereCiper
 {
-	class ChiperVigenere
+	public class VegenereCiperMain
 	{
 		private IInputFromConsole _consoleInput = UtilityControl.CreateInputFromConsole();
 		//Other other = new Other();
 		int intWordCode,
 			intKeyCode;
 
-		public void VigenereCryptoMain(bool isCripto)
+		public void VegenereCryptoMain(bool isCripto)
 		{
 			Console.Clear();
 			Console.WriteLine("Алгоритм {0} шифром Виженера",
@@ -23,9 +17,10 @@ namespace Crtypto_update
 			Console.WriteLine();
 			VigenereChiperProcess(isCripto);
 			Console.WriteLine();
+			Console.ReadKey();
 		}
 
-		void VigenereChiperProcess(bool isCripto)
+		private void VigenereChiperProcess(bool isCripto)
 		{
 
 			string strEncryptedWord = string.Empty,
@@ -54,17 +49,17 @@ namespace Crtypto_update
 				Console.Write("{0, -3}", strEncryptedWord[i]);
 		}
 
-		int VigenereChiperCryptionProcess()
+		private int VigenereChiperCryptionProcess()
 		{
 			return (intWordCode + intKeyCode) % Utility.AlphabetLength;
 		}
 
-		int VigenereChiperDecryptionProcess()
+		private int VigenereChiperDecryptionProcess()
 		{
 			return (intWordCode + Utility.AlphabetLength - intKeyCode) % Utility.AlphabetLength;
 		}
 
-		public void VigenereTableOutput()
+		public void VegenereTableOutput()
 		{
 			string alphabetStrLower = Utility.GetAlphabet().ToLower();
 			Console.Clear();
@@ -84,6 +79,7 @@ namespace Crtypto_update
 				}
 				Console.WriteLine();
 			}
+			Console.ReadKey();
 		}
 	}
 }

@@ -1,10 +1,21 @@
-﻿using ChiperAffine;
+﻿using AffineCiper;
 
 
 namespace AffineCiper
 {
-    public static class Factory
+    public static class AffineCiperFactory
     {
+        public static IAffineProgramStart CreateEnctyptorStarter()
+        {
+            return new StartEncryptor();
+        }
+
+        public static IAffineProgramStart CreateDectyptorStarter()
+        {
+            return new StartDecryptor();
+        }
+
+
         public static IAffineProcessBase CreateEncryptionProcess()
         {
             return new AffineEncryptionProcess();
@@ -34,7 +45,6 @@ namespace AffineCiper
         {
             return new AffineDecryptor();
         }
-
 
         public static IAffineBaseModel CreateAffineModel()
         {

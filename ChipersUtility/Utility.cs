@@ -35,6 +35,7 @@ namespace ChipersUtility
 		{
 			for (int i = 0; i < messageForOutput.Length; i++)
 				Console.Write("{0, -3}", messageForOutput[i]);
+            Console.WriteLine();
 		}
 	}
 }

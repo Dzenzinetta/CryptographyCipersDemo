@@ -29,6 +29,8 @@ namespace ChiperVertical
 			_chiperVerticalShiftModel.MatrixColumnCount = _matrixProperties.ColumnCount;
 			_chiperVerticalShiftModel.MatrixRowCount = _matrixProperties.RowCount;
 
+			
+
 		}
 	
 		//Функция шифрования: перенос в строку столбца, номер которого соответствует ключу
@@ -39,7 +41,7 @@ namespace ChiperVertical
 					if (i == _chiperVerticalShiftModel.VerticalKeyFromConsole[j])
 						for (int l = 0; l < _chiperVerticalShiftModel.MatrixRowCount; l++)
 							_textAfterManipulations += _chiperVerticalShiftModel.MatrixForVerticalChiper[l, j];
-			return _textAfterManipulations;
+		 	return _textAfterManipulations;
 		}
 
 		//Функция дешифрования: перенос в строку символа по-столбцам в соответствие с ключом
@@ -59,8 +61,8 @@ namespace ChiperVertical
 			Console.WriteLine("Welcome to Programm that demonstrate Vertical Shift Chiper encryption.\n\n");
 
 			GetPropertiesForVerticalChiperShift("Input text to be encrypted");
-
-            Console.WriteLine($"Encrypted word: { GetEncryptedText() }");
+			_chiperVerticalShiftModel.MatrixForVerticalChiper = _matrixProperties.GetEncryptionMatrix();
+			Console.WriteLine($"Encrypted word: { GetEncryptedText() }");
 		}
 
 		public void ChiperVerticalShiftDecrytiption()

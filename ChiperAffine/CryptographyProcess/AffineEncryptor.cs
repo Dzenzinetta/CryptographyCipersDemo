@@ -1,10 +1,10 @@
 ﻿using ChipersUtility;
 
-namespace ChiperAffine
+namespace AffineCiper
 {
     public class AffineEncryptor : AffineCryptographyTypeBase, IAffineCryptographyTypeBase
     {
-        //public override IAffineBaseModel Model { get; set; }
+        public override string OutputMessage { get; } = "Decrypted text";
 
         public override int AffineSymbolManipulation(IAffineBaseModel model, int wordCode)
         {

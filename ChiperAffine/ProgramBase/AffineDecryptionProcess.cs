@@ -1,13 +1,14 @@
 ﻿using ChipersUtility;
 
-namespace ChiperAffine
+namespace AffineCiper
 {
-    public class AffineEncryptionProcess : AffineProcessBase, IAffineProcessBase
+    public class AffineDecryptionProcess : AffineProcessBase, IAffineProcessBase
     {
+       
         public override string Greeteengs { get; } = $"Welcome to the Programm demonstration of Affine Ciper algorithm\n" +
-            $"In this proramm you will encrypt your text by following algorythm.\n";
-        public override string SymbolOutputTitle { get; } = $"Index (by Alphabet) of Encrypted text and Encrypted word:\n";
-
+            $"In this proramm you cold decrypt some text, that you already encrypted by Affine Ciper.\n" +
+            $"For that you need to have two key's: Additive and Multiplicative\n\n";
+        public override string SymbolOutputTitle { get; } = $"\nIndexes (by Alphabet) and Decrypted word:";
 
         public override IAffineKeyBase AdditiveKeyObject { get; set; }
         public override IAffineKeyBase MultiplicativeKeyObject { get; set; }
@@ -17,7 +18,9 @@ namespace ChiperAffine
 
         public override void GetInverseMultiplicativeKeyForDecryption()
         {
-            Console.WriteLine();
+            for (int i = 0; i < Utility.AlphabetLength; i++)
+                if ((Model.MultiplicativeKey * i % Utility.AlphabetLength) == 1)
+                    Model.MultiplicativeKey = i;
         }
     }
 }
