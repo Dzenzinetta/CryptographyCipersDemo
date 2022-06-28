@@ -9,11 +9,11 @@ namespace AffineCiper
 
         public abstract string PromtMessage { get; }
 
-        public int KeyProcess(IInputFromConsole input)
+        public int KeyProcess()
         {
             do
             {
-                InputKey = input.GetIntegerInputFromConsole(PromtMessage);
+                InputKey = InputFromConsole.GetIntegerInputFromConsole(PromtMessage);
 
                 while (InputKey < 0)
                     InputKey += Utility.AlphabetLength;

@@ -13,7 +13,7 @@ namespace AffineCiper
         public override IAffineKeyBase MultiplicativeKeyObject { get; set; }
         public override IAffineCryptographyTypeBase AffineProcessObject { get; set; }
         public override IAffineBaseModel Model { get; set; }
-        public override IInputFromConsole ConsoleInput { get; set; }
+        //public override IInputFromConsole ConsoleInput { get; set; }
 
         public override void GetInverseMultiplicativeKeyForDecryption() 
         {

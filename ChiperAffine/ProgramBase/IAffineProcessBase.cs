@@ -12,7 +12,7 @@ namespace AffineCiper
 
         IAffineBaseModel Model { get; set; }
 
-        IInputFromConsole ConsoleInput { get; set; }
+        //IInputFromConsole ConsoleInput { get; set; }
 
         public void AffineMainProcess();
 

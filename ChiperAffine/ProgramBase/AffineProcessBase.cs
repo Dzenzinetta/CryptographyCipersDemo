@@ -17,7 +17,7 @@ namespace AffineCiper
         public abstract IAffineKeyBase MultiplicativeKeyObject { get; set; }
         public abstract IAffineCryptographyTypeBase AffineProcessObject { get; set; }
         public abstract IAffineBaseModel Model { get; set; }
-        public abstract IInputFromConsole ConsoleInput { get; set; }
+       // public abstract IInputFromConsole ConsoleInput { get; set; }
 
 
         public void AffineMainProcess()
@@ -40,9 +40,9 @@ namespace AffineCiper
 
         private void GetPropertiesForAffineChiper()
         {
-            Model.TextFromConsole = ConsoleInput.GetStringInputFromConsole("Input text");
-            Model.AddictiveKey = AdditiveKeyObject.KeyProcess(ConsoleInput);
-            Model.MultiplicativeKey = MultiplicativeKeyObject.KeyProcess(ConsoleInput);
+            Model.TextFromConsole = InputFromConsole.GetStringInputFromConsole("Input text");
+            Model.AddictiveKey = AdditiveKeyObject.KeyProcess();
+            Model.MultiplicativeKey = MultiplicativeKeyObject.KeyProcess();
         }
 
         public abstract void GetInverseMultiplicativeKeyForDecryption();

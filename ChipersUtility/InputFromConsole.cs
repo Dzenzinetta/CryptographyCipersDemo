@@ -3,28 +3,30 @@ using static ChipersUtility.InputFromConsoleValidator;
 
 namespace ChipersUtility
 {
-    public class InputFromConsole : IInputFromConsole
+    public static class InputFromConsole// : IInputFromConsole
     {
-        private string _tmpInput = string.Empty;
+        //private string _tmpInput = string.Empty;
      
-        public string GetStringInputFromConsole(string message)
+        public static string GetStringInputFromConsole(string message)
         {
+            string tmpInput = string.Empty;
             do
             {
                 Console.Write($"{message}: ");
-                _tmpInput = Console.ReadLine();
-            } while (StringIputValidationPass(_tmpInput) == false);
+                tmpInput = Console.ReadLine();
+            } while (StringIputValidationPass(tmpInput) == false);
 
-            return RemoveSpace(_tmpInput.ToUpper());
+            return RemoveSpace(tmpInput.ToUpper());
         }
 
-        public int GetIntegerInputFromConsole(string message)
+        public static int GetIntegerInputFromConsole(string message)
         {
+            string tmpInput = string.Empty;
             int output = 0;
             do
             {
-                _tmpInput = GetStringInputFromConsole(message);
-                if (DigitalInputValidationPass(_tmpInput, out int result))
+                tmpInput = GetStringInputFromConsole(message);
+                if (DigitalInputValidationPass(tmpInput, out int result))
                     output = result;
             } while (output == 0);
 

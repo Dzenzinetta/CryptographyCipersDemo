@@ -6,7 +6,7 @@ namespace AffineCiper
     {
         int InputKey { get; set; }
         string PromtMessage { get; }
-        public int KeyProcess(IInputFromConsole input);
+        public int KeyProcess();
         bool IsKeyValid();
     }
 }

@@ -20,7 +20,7 @@ namespace AffineCiper
             CryptoType.MultiplicativeKeyObject = AffineCiperFactory.CreateMultiplicativeKey();
             CryptoType.AffineProcessObject = GetProcessType();
             CryptoType.Model = AffineCiperFactory.CreateAffineModel();
-            CryptoType.ConsoleInput = UtilityControl.CreateInputFromConsole();
+            //CryptoType.ConsoleInput = UtilityControl.CreateInputFromConsole();
 
             CryptoType.AffineMainProcess();
         }

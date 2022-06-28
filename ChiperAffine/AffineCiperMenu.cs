@@ -19,8 +19,6 @@ namespace AffineCiper
             Options.Add("Go Back");
         }
 
-        
-
         public override void MenuSelector()
         {
             Utility.ResetCursorVisible();
