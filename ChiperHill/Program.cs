@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ChiperHill;
+
+namespace ChiperHill
+{
+    class Program
+    {
+        public static void Main()
+        {
+            HillCiperConsole hillStarter = new HillCiperConsole();
+
+            hillStarter.HillChiperMain();
+        }
+    }
+}

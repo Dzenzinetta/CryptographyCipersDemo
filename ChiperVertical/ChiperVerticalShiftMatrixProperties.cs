@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace ChiperVertical
+namespace VerticalShiftCiper
 {
 	public class ChiperVerticalShiftMatrixProperties
 	{
-		private ChiperVerticalShiftModel _model;
+		private VerticalShiftCiperModel _model;
 
-        public ChiperVerticalShiftMatrixProperties(ChiperVerticalShiftModel chiperVerticalShiftModel)
+        public ChiperVerticalShiftMatrixProperties(VerticalShiftCiperModel chiperVerticalShiftModel)
         {
             _model = chiperVerticalShiftModel;
         }

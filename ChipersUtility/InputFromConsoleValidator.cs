@@ -17,8 +17,13 @@ namespace ChipersUtility
 		{
 			string inputSpaceless = string.Empty;
 			for (int i = 0; i < strInput.Length; i++)
-				if (strInput[i] != ' ') inputSpaceless += strInput[i];
-			return inputSpaceless;
+			{
+                if (strInput[i] != ' ')
+				{
+                    inputSpaceless += strInput[i];
+                }
+            }
+            return inputSpaceless;
 		}
 
 		public static bool DigitalInputValidationPass(string input, out int result)
@@ -51,16 +56,20 @@ namespace ChipersUtility
         public static bool IsInputHaveRepeatedSymbol(string input, out int badSymbol)
 		{
 			for (int i = 0; i < input.Length; i++)
+			{
 				for (int j = 0; j < input.Length; j++)
 				{
 					if (j == i)
-						continue;
-					if (input[j] == input[i])
+					{
+                        continue;
+                    }
+                    if (input[j] == input[i])
 					{
 						badSymbol = input[j];
 						return true;
 					}
 				}
+			}
 			badSymbol = 0;
 			return false;
 		}

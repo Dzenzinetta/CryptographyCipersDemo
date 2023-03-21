@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ChiperVertical
+namespace VerticalShiftCiper
 {
     class VerticalKeyValidator
     {

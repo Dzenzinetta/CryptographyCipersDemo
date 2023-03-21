@@ -3,13 +3,9 @@ namespace ChipersUtility
 {
     public static class UtilityControl
     {
-
-        public static IInputFromConsole CreateInputFromConsole()
-        { 
-            return new InputFromConsole();
-        }
-
-        
-
+        //public static ITextInput CreateInputFromConsole()
+        //{ 
+        //    return new InputFromConsole();
+        //}
     }
 }

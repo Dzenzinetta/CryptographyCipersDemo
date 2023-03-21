@@ -4,7 +4,7 @@ namespace PlayfairCiper
 {
 	public class PlayfairCiperMain
 	{
-		private IInputFromConsole _consoleInput = UtilityControl.CreateInputFromConsole();
+		private ITextInput _consoleInput = UtilityControl.CreateInputFromConsole();
 		//Other other = new Other();
 		PositionOfSymbolsOnMatrix position = new PositionOfSymbolsOnMatrix();
 
@@ -43,11 +43,11 @@ namespace PlayfairCiper
 
 		void GetKeyAlphabetMatrix()
 		{
-			for (int i = 0; i < Utility.AlphabetLength; i++)
+			for (int i = 0; i < TextManipulator.AlphabetLength; i++)
 			{
-				if (Utility.GetAlphabet()[i] == 'J') continue;
-				if (strInputKey.Contains(Utility.GetAlphabet()[i]) == false)
-					strInputKey += Utility.GetAlphabet()[i];
+				if (TextManipulator.GetAlphabet()[i] == 'J') continue;
+				if (strInputKey.Contains(TextManipulator.GetAlphabet()[i]) == false)
+					strInputKey += TextManipulator.GetAlphabet()[i];
 			}
 		}
 
@@ -71,7 +71,7 @@ namespace PlayfairCiper
 			}
 		}
 
-		void GetCordForShifting()
+		void GetCoordForShifting()
 		{
 			for (int n = 0, q = 0; n < strWordDividedByBigramm.Length; n++)
 				for (int i = 0; i < 5; i++)
@@ -136,7 +136,7 @@ namespace PlayfairCiper
 			Console.Clear();
 			Console.WriteLine("Welcome to Playfair encryptor");
 			Console.WriteLine();
-			strInputWord = _consoleInput.GetStringInputFromConsole("1. Enter word for encryption");
+			strInputWord = _consoleInput.GetString("1. Enter word for encryption");
 
             //do
             //{
@@ -155,7 +155,7 @@ namespace PlayfairCiper
 			FillKeyMatrixAndOutput();
 
 			Console.WriteLine("\n5. Processing encription...\n\n");
-			GetCordForShifting();
+			GetCoordForShifting();
 			FillContainerForEncriptedWord();
 
 			Console.Write("\nOriginal word:\t");

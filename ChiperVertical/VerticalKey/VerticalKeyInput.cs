@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ChiperVertical
+namespace VerticalShiftCiper
 {
 	class VerticalKeyInput
 	{		
@@ -21,21 +21,10 @@ namespace ChiperVertical
 			_wordLength = wordLength;
 		}
 
-		private int GetKeyLength()
-		{
-			double wordLengthRoot = Math.Sqrt(_wordLength);
-
-			if (_wordLength <= MinimalLengthForDivider)
-				return _wordLength;
-			if (wordLengthRoot - (int)wordLengthRoot == 0.0)
-				return (int)wordLengthRoot;
-			return (int)wordLengthRoot + 1;
-		}
-
 
 		public List<int> GetVerticalKeyFromConsole()
 		{
-			InputFromConsole inputFromConsole = new InputFromConsole();
+			//InputFromConsole inputFromConsole = new InputFromConsole();
 
 			VerticalKeyModel verticalKeyModel = new VerticalKeyModel
 			{
@@ -50,7 +39,7 @@ namespace ChiperVertical
 				{
 					string tmpTitle = $"Input {i + 1} - symbol from {verticalKeyModel.AllowedKeyLengthForVerticalChiper} and press Enter";
 
-					verticalKeyModel.SingleElementOfVerticalKey = inputFromConsole.GetIntegerInputFromConsole(tmpTitle);
+					verticalKeyModel.SingleElementOfVerticalKey = InputFromConsole.GetInteger(tmpTitle);
 
 					verticalKeyModel.VerticalKey.Insert(i, verticalKeyModel.SingleElementOfVerticalKey);
 
@@ -64,6 +53,16 @@ namespace ChiperVertical
 			return verticalKeyModel.VerticalKey;
 		}
 
+		private int GetKeyLength()
+		{
+			double wordLengthRoot = Math.Sqrt(_wordLength);
+
+			if (_wordLength <= MinimalLengthForDivider)
+				return _wordLength;
+			if (wordLengthRoot - (int)wordLengthRoot == 0.0)
+				return (int)wordLengthRoot;
+			return (int)wordLengthRoot + 1;
+		}
 	}
 
 }

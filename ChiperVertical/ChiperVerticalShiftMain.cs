@@ -2,20 +2,20 @@
 using System;
 
 
-namespace ChiperVertical
+namespace VerticalShiftCiper
 {
     partial class ChiperVerticalShiftMain
 	{
-		private ChiperVerticalShiftModel _chiperVerticalShiftModel = new ChiperVerticalShiftModel();
+		private VerticalShiftCiperModel _chiperVerticalShiftModel = new VerticalShiftCiperModel();
 		private ChiperVerticalShiftMatrixProperties _matrixProperties;
 
 		private string _textAfterManipulations = string.Empty;
 
 		private void GetPropertiesForVerticalChiperShift(string titleForConsole)
 		{
-			IInputFromConsole inputFromConsole = new InputFromConsole();
+			//ITextInput inputFromConsole = new InputFromConsole();
 
-			_chiperVerticalShiftModel.TextFromConsole = inputFromConsole.GetStringInputFromConsole(titleForConsole);
+			_chiperVerticalShiftModel.TextFromConsole = InputFromConsole.GetString(titleForConsole);
 			_chiperVerticalShiftModel.TextLength = _chiperVerticalShiftModel.TextFromConsole.Length;
 
 			VerticalKeyInput verticalKeyInput = new VerticalKeyInput(_chiperVerticalShiftModel.TextLength);

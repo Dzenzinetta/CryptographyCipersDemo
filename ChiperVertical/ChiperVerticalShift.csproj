@@ -44,16 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiperVerticalShiftMain.cs" />
+    <Compile Include="Models\IVerticalShiftCiperModel.cs" />
     <Compile Include="ProgrammStart.cs" />
     <Compile Include="VerticalKey\IVerticalKeyValidationModel.cs" />
     <Compile Include="VerticalKey\VerticalKeyValidator.cs" />
     <Compile Include="ChiperVerticalShiftMatrixProperties.cs" />
-    <Compile Include="Models\ChiperVerticalShiftModel.cs" />
+    <Compile Include="Models\VerticalShiftCiperModel.cs" />
     <Compile Include="VerticalKey\Validations\VerticalKeyDuplicateCheck.cs" />
     <Compile Include="VerticalKey\VerticalKeyInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\VerticalKeyModel.cs" />
     <Compile Include="VerticalKey\Validations\VerticalKeySymbolExceed.cs" />
+    <Compile Include="VerticalShiftCiperBase.cs" />
+    <Compile Include="VerticalShiftCiperFactory.cs" />
     <Compile Include="VerticalShiftCiperMenu.cs" />
   </ItemGroup>
   <ItemGroup>

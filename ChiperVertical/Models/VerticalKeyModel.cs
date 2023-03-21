@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ChiperVertical
+namespace VerticalShiftCiper
 {
     public class VerticalKeyModel
     {

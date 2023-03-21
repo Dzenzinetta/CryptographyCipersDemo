@@ -14,3 +14,19 @@ G:\Другие компьютеры\Домашний компьютер\Classic
 G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe
 G:\Другие компьютеры\Домашний компьютер\ClassicCryptographyChipersDemo\ChipersUtility\bin\Debug\ChipersUtility.pdb
 C:\Users\alpha\Documents\_Project\ClassicCryptographyChipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe.config
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.pdb
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
+C:\Users\Artem\Documents\_Proj\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe.config
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.pdb
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.AssemblyReference.cache
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
+C:\Users\Artem\YandexDisk\dev\Cs\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb

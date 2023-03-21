@@ -19,7 +19,7 @@ namespace PlayfairCiper
 
         public override void MenuSelector()
         {
-            Utility.ResetCursorVisible();
+            TextManipulator.ResetCursorVisible();
             switch (SelectedOption)
             {
                 case 0:

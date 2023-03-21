@@ -1,5 +1,5 @@
 ﻿
-namespace ChiperVertical
+namespace VerticalShiftCiper
 {
     class VerticalKeySymbolExceed : IVerticalKeyValidationModel
     {

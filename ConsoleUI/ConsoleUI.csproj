@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChiperAffine\AffineCiper.csproj" />
+    <ProjectReference Include="..\AffineCiper\AffineCiper.csproj" />
     <ProjectReference Include="..\ChiperHill\ChiperHill.csproj" />
     <ProjectReference Include="..\ChiperPlayfair\ChiperPlayfair.csproj" />
     <ProjectReference Include="..\ChiperVertical\ChiperVerticalShift.csproj" />
-    <ProjectReference Include="..\ChiperVigenere\ChiperVigenere.csproj" />
+    <ProjectReference Include="..\VegenereCiper\VegenereCiper.csproj" />
   </ItemGroup>
 
 </Project>
