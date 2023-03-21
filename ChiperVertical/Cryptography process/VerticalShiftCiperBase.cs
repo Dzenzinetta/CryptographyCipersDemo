@@ -1,0 +1,73 @@
+﻿using ChipersUtility;
+using System;
+
+namespace VerticalShiftCiper
+{
+    public abstract class VerticalShiftCiperBase : IVerticalShiftCiperBase
+    {
+        public abstract string Greeteengs { get; }
+        public abstract string Rules { get; }
+
+        private IVerticalShiftCiperModel _chiperVerticalShiftModel;
+        private ChiperVerticalShiftMatrixProperties _matrixProperties;
+        private VerticalKeyInput _verticalKeyInput;
+
+        VerticalShiftCiperBase()
+        {
+            _chiperVerticalShiftModel = VerticalShiftCiperFactory.CreateVerticalShiftModel();
+        }
+
+        public void VerticalShiftCiperMain()
+        {
+            Console.Clear();
+            Console.WriteLine($"{Greeteengs}");
+
+            Console.WriteLine($"{Rules}");
+            Console.ReadKey();
+
+            Console.WriteLine("1. Getting Text:");
+            GetTextFromConsole();
+            GetTextLength();
+
+            Console.WriteLine("2. Getting Key:");
+            GetVerticalKey();
+
+            Console.WriteLine("3. Calculating matrix for Vertical Shift ciper");
+            PrepareVerticalMatrixForCiper();
+
+            Console.WriteLine($"4. Output result:{VerticalShiftCiperCryptedText()}");
+            Console.WriteLine(VerticalShiftCiperCryptedText());
+        }
+
+        public abstract string VerticalShiftCiperCryptedText();
+
+        public abstract void GetVerticalCiperMatrix();
+
+        private void GetTextFromConsole()
+        {
+            _chiperVerticalShiftModel.TextFromConsole = InputFromConsole.GetString("Input Text");
+        }
+
+        private void GetTextLength()
+        {
+            _chiperVerticalShiftModel.TextLength = _chiperVerticalShiftModel.TextFromConsole.Length;
+        }
+
+        private void GetVerticalKey()
+        {
+            _verticalKeyInput = VerticalShiftCiperFactory.CreateVerticalKeyInput(_chiperVerticalShiftModel.TextLength);
+            _chiperVerticalShiftModel.VerticalKeyFromConsole = _verticalKeyInput.GetVerticalKeyFromConsole();
+            _chiperVerticalShiftModel.KeyLength = _chiperVerticalShiftModel.VerticalKeyFromConsole.Count;
+        }
+
+        private void PrepareVerticalMatrixForCiper()
+        {
+            _matrixProperties = VerticalShiftCiperFactory.CreateVerticalShiftMatrix(_chiperVerticalShiftModel);
+            _matrixProperties.GetMatrixProperties();
+
+            _chiperVerticalShiftModel.MatrixColumnCount = _matrixProperties.ColumnCount;
+            _chiperVerticalShiftModel.MatrixRowCount = _matrixProperties.RowCount;
+        }
+
+    }
+}

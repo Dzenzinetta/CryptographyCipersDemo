@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace VerticalShiftCiper
 {
-	class VerticalKeyInput
+	public class VerticalKeyInput
 	{		
 		private readonly VerticalKeyValidator _verticalKeyValidator = new VerticalKeyValidator();
 

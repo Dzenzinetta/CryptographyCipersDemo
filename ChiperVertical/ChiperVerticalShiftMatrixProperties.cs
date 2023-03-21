@@ -4,9 +4,9 @@ namespace VerticalShiftCiper
 {
 	public class ChiperVerticalShiftMatrixProperties
 	{
-		private VerticalShiftCiperModel _model;
+		private IVerticalShiftCiperModel _model;
 
-        public ChiperVerticalShiftMatrixProperties(VerticalShiftCiperModel chiperVerticalShiftModel)
+        public ChiperVerticalShiftMatrixProperties(IVerticalShiftCiperModel chiperVerticalShiftModel)
         {
             _model = chiperVerticalShiftModel;
         }
