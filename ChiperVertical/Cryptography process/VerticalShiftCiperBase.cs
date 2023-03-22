@@ -8,11 +8,11 @@ namespace VerticalShiftCiper
         public abstract string Greeteengs { get; }
         public abstract string Rules { get; }
 
-        private IVerticalShiftCiperModel _chiperVerticalShiftModel;
-        private ChiperVerticalShiftMatrixProperties _matrixProperties;
+        protected IVerticalShiftCiperModel _chiperVerticalShiftModel;
+        protected ChiperVerticalShiftMatrixProperties _matrixProperties;
         private VerticalKeyInput _verticalKeyInput;
 
-        VerticalShiftCiperBase()
+        protected VerticalShiftCiperBase()
         {
             _chiperVerticalShiftModel = VerticalShiftCiperFactory.CreateVerticalShiftModel();
         }
@@ -34,14 +34,16 @@ namespace VerticalShiftCiper
 
             Console.WriteLine("3. Calculating matrix for Vertical Shift ciper");
             PrepareVerticalMatrixForCiper();
+            GetVerticalCiperMatrix();
 
-            Console.WriteLine($"4. Output result:{VerticalShiftCiperCryptedText()}");
-            Console.WriteLine(VerticalShiftCiperCryptedText());
+            Console.WriteLine($"4. Output result:");
+            VerticalShiftCiperCryptedText();
+            Console.WriteLine($"\t{_chiperVerticalShiftModel.TextAfterChiperManipulations}");
         }
 
-        public abstract string VerticalShiftCiperCryptedText();
+        protected abstract void VerticalShiftCiperCryptedText();
 
-        public abstract void GetVerticalCiperMatrix();
+        protected abstract void GetVerticalCiperMatrix();
 
         private void GetTextFromConsole()
         {

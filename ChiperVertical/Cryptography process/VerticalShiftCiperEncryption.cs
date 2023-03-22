@@ -1,19 +1,29 @@
 ﻿namespace VerticalShiftCiper
 {
-    public class VerticalShiftCiperEncryption : VerticalShiftCiperBase, IVerticalShiftCiperBase
+    public class VerticalShiftCiperEncryption : VerticalShiftCiperBase
     {
-        public override string Greeteengs => throw new System.NotImplementedException();
+        public override string Greeteengs { get; } = "Welcome to Programm that demonstrate Vertical Shift Chiper encryption.\n\n";
 
-        public override string Rules => throw new System.NotImplementedException();
+        public override string Rules { get; } = "Hello World!";
 
-        public override void GetVerticalCiperMatrix()
+        protected override void GetVerticalCiperMatrix()
         {
-            throw new System.NotImplementedException();
+			_chiperVerticalShiftModel.MatrixForVerticalChiper = _matrixProperties.GetEncryptionMatrix();
         }
 
-        public override string VerticalShiftCiperCryptedText()
+        protected override void VerticalShiftCiperCryptedText()
         {
-            throw new System.NotImplementedException();
+            for (int i = 1; i <= _chiperVerticalShiftModel.KeyLength; i++)
+            {
+                for (int j = 0; j < _chiperVerticalShiftModel.MatrixColumnCount; j++)
+                {
+                    if (i == _chiperVerticalShiftModel.VerticalKeyFromConsole[j])
+                        for (int l = 0; l < _chiperVerticalShiftModel.MatrixRowCount; l++)
+                        {
+                            _chiperVerticalShiftModel.TextAfterChiperManipulations += _chiperVerticalShiftModel.MatrixForVerticalChiper[l, j];
+                        }
+                }
+            }
         }
     }
 }

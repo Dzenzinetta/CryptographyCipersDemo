@@ -5,9 +5,13 @@ namespace VerticalShiftCiper
     {
         public static void Main()
         {
-            ChiperVerticalShiftMain main = new ChiperVerticalShiftMain();
+            //ChiperVerticalShiftMain main = new ChiperVerticalShiftMain();
 
-            main.ChiperVerticalShiftEncrytiption();
+            //main.ChiperVerticalShiftEncrytiption();
+
+            IVerticalShiftCiperBase encryptor = new VerticalShiftCiperEncryption();
+
+            encryptor.VerticalShiftCiperMain();
         }
 
 
