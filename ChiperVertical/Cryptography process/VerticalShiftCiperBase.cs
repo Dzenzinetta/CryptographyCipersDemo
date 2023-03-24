@@ -38,7 +38,7 @@ namespace VerticalShiftCiper
 
             Console.WriteLine($"4. Output result:");
             VerticalShiftCiperCryptedText();
-            Console.WriteLine($"\t{_chiperVerticalShiftModel.TextAfterChiperManipulations}");
+            Console.WriteLine($"\n\t{_chiperVerticalShiftModel.TextAfterChiperManipulations}");
         }
 
         protected abstract void VerticalShiftCiperCryptedText();
@@ -69,6 +69,9 @@ namespace VerticalShiftCiper
 
             _chiperVerticalShiftModel.MatrixColumnCount = _matrixProperties.ColumnCount;
             _chiperVerticalShiftModel.MatrixRowCount = _matrixProperties.RowCount;
+
+            _chiperVerticalShiftModel.MatrixForVerticalChiper
+                = new char[_chiperVerticalShiftModel.MatrixRowCount, _chiperVerticalShiftModel.MatrixColumnCount];
         }
 
     }
