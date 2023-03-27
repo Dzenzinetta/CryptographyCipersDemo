@@ -20,16 +20,6 @@ namespace VerticalShiftCiper
 			ColumnCount = _model.KeyLength;
 		}
 
-		private int GetMatrixRowCount()
-		{
-			int lengthProportions = _model.TextLength / _model.KeyLength;
-
-			if (lengthProportions * _model.KeyLength < _model.TextLength)
-				return lengthProportions + 1;
-
-			return lengthProportions;
-		}
-
 		public char[,] GetEncryptionMatrix()
 		{
 			for (int i = 0, c = 0; i < RowCount; i++)
@@ -59,6 +49,15 @@ namespace VerticalShiftCiper
 			return _model.MatrixForVerticalChiper;
 		}
 
+        private int GetMatrixRowCount()
+		{
+			int lengthProportions = _model.TextLength / _model.KeyLength;
+
+			if (lengthProportions * _model.KeyLength < _model.TextLength)
+				return lengthProportions + 1;
+
+			return lengthProportions;
+		}
 	}
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VerticalShiftCiper
 {
-    class VerticalKeyValidator
+    public sealed class VerticalKeyValidator
     {
         private List<IVerticalKeyValidationModel> _validations = new List<IVerticalKeyValidationModel>();
 

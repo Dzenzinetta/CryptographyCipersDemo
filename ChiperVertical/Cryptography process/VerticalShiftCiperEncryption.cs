@@ -2,27 +2,44 @@
 {
     public class VerticalShiftCiperEncryption : VerticalShiftCiperBase
     {
-        public override string Greeteengs { get; } = "Welcome to Programm that demonstrate Vertical Shift Chiper encryption.\n\n";
+        protected override string Greeteengs { get; } = "Welcome to Programm that demonstrate Vertical Shift Chiper encryption.\n\n";
 
-        public override string Rules { get; } = "Hello World!";
+        protected override string Rules { get; } = "Hello World!";
 
         protected override void GetVerticalCiperMatrix()
         {
-			_chiperVerticalShiftModel.MatrixForVerticalChiper = _matrixProperties.GetEncryptionMatrix();
+			_verticalShiftCiperModel.MatrixForVerticalChiper = _matrixProperties.GetEncryptionMatrix();
         }
 
         protected override void VerticalShiftCiperCryptedText()
         {
-            for (int i = 1; i <= _chiperVerticalShiftModel.KeyLength; i++)
+            for (int i = 1; i <= _verticalShiftCiperModel.KeyLength; i++)
             {
-                for (int j = 0; j < _chiperVerticalShiftModel.MatrixColumnCount; j++)
+                for (int j = 0; j < _verticalShiftCiperModel.MatrixColumnCount; j++)
                 {
-                    if (i == _chiperVerticalShiftModel.VerticalKeyFromConsole[j])
-                        for (int l = 0; l < _chiperVerticalShiftModel.MatrixRowCount; l++)
-                        {
-                            _chiperVerticalShiftModel.TextAfterChiperManipulations += _chiperVerticalShiftModel.MatrixForVerticalChiper[l, j];
-                        }
+                    CheckAndGetCryptedText(i, j);
                 }
+            }
+        }
+
+        private void CheckAndGetCryptedText(int keyLengthIndex, int matrixColumnIndex)
+        {
+            if (CompareIndexWithKey(keyLengthIndex, matrixColumnIndex))
+            {
+                InsertSymbolFromMatrix(matrixColumnIndex);
+            }
+        }
+
+        private bool CompareIndexWithKey(int keyLengthIndex, int matrixColumnIndex)
+        {
+            return keyLengthIndex == _verticalShiftCiperModel.VerticalKeyFromConsole[matrixColumnIndex];
+        }
+
+        private void InsertSymbolFromMatrix(int matrixColumnIndex)
+        {
+            for (int l = 0; l < _verticalShiftCiperModel.MatrixRowCount; l++)
+            {
+                _verticalShiftCiperModel.TextAfterChiperManipulations += _verticalShiftCiperModel.MatrixForVerticalChiper[l, matrixColumnIndex];
             }
         }
     }

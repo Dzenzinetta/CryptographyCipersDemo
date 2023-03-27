@@ -5,8 +5,8 @@ using System.Collections.Generic;
 namespace VerticalShiftCiper
 {
 	public class VerticalKeyInput
-	{		
-		private readonly VerticalKeyValidator _verticalKeyValidator = new VerticalKeyValidator();
+	{
+		private readonly VerticalKeyValidator _verticalKeyValidator;
 
 		private const int MinimalLengthForDivider = 7;
 		private readonly int _wordLength;
@@ -18,9 +18,9 @@ namespace VerticalShiftCiper
 
 		public VerticalKeyInput(int wordLength)
 		{
+			_verticalKeyValidator = new VerticalKeyValidator();
 			_wordLength = wordLength;
 		}
-
 
 		public List<int> GetVerticalKeyFromConsole()
 		{

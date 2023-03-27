@@ -17,8 +17,9 @@ namespace VerticalShiftCiper
         public static ChiperVerticalShiftMatrixProperties CreateVerticalShiftMatrix(IVerticalShiftCiperModel model)
         {
             return new ChiperVerticalShiftMatrixProperties(model);
-
         }
+
+        public static 
 
     }
 }
