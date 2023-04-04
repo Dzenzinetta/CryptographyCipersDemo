@@ -12,9 +12,9 @@ namespace VerticalShiftCiper
         protected VerticalShiftCiperMatrix _matrixProperties;
         private VerticalKeyInput _verticalKeyInput;
 
-        protected VerticalShiftCiperBase()
+        protected VerticalShiftCiperBase(IVerticalShiftCiperModel model)
         {
-            _verticalShiftCiperModel = VerticalShiftCiperFactory.CreateVerticalShiftModel();
+            _verticalShiftCiperModel = model;
         }
 
         public void VerticalShiftCiperMain()
