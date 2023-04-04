@@ -1,5 +1,4 @@
-﻿using ConsoleUI;
-using ChipersUtility;
+﻿using ChipersUtility;
 
 namespace AffineCiper
 {
@@ -13,13 +12,13 @@ namespace AffineCiper
 
         public override void FillMenuList()
         {
-            Options = new List<string>();
-            Options.Add("Encryption algorithm");
-            Options.Add("Decryption algorithm");
-            Options.Add("Go Back");
+            Options = new List<string>
+            {
+                "Encryption algorithm",
+                "Decryption algorithm",
+                "Go Back"
+            };
         }
-
-        
 
         public override void MenuSelector()
         {
@@ -29,13 +28,13 @@ namespace AffineCiper
                 case 0:
                     {
                         _starter = AffineCiperFactory.CreateEnctyptorStarter();
-                        _starter.StartAffineCiperProgramm();
+                        _starter.StartAffineCiperProgram();
                         break;
                     }
                 case 1:
                     {
                         _starter = AffineCiperFactory.CreateDectyptorStarter();
-                        _starter.StartAffineCiperProgramm();
+                        _starter.StartAffineCiperProgram();
                         break;
                     }
             }

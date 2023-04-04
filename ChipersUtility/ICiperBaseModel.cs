@@ -4,6 +4,6 @@
     {
         string TextFromConsole { get; set; }
 
-        string TextAfterChiperManipulations { get; set; }
+        string TextAfterCiperManipulations { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace VerticalShiftCiper
     {
         public string TextFromConsole { get; set; }
 
-        public string TextAfterChiperManipulations { get; set; }
+        public string TextAfterCiperManipulations { get; set; }
 
         public int TextLength { get; set; }
 
@@ -14,7 +14,7 @@ namespace VerticalShiftCiper
 
         public int KeyLength { get; set; }
 
-        public char[,] MatrixForVerticalChiper { get; set; }
+        public char[,] MatrixForVerticalCiper { get; set; }
 
         public int MatrixColumnCount { get; set; }
 

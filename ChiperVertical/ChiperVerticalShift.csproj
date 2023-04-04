@@ -44,20 +44,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiperVerticalShiftMain.cs" />
-    <Compile Include="Cryptography process\IVerticalShiftCiperBase.cs" />
-    <Compile Include="Cryptography process\VerticalShiftCiperEncryption.cs" />
-    <Compile Include="Models\IVerticalShiftCiperModel.cs" />
-    <Compile Include="ProgrammStart.cs" />
+    <Compile Include="Cryptography-process\Interface\IVerticalShiftCiperBase.cs" />
+    <Compile Include="Cryptography-process\VerticalShiftCiperDecryption.cs" />
+    <Compile Include="Cryptography-process\VerticalShiftCiperEncryption.cs" />
+    <Compile Include="Models\Interface\IVerticalShiftCiperModel.cs" />
+    <Compile Include="ProgramStart\Interface\IVerticalShiftProgramStart.cs" />
+    <Compile Include="ProgramStart\ProgramStartBase.cs" />
     <Compile Include="VerticalKey\IVerticalKeyValidationModel.cs" />
     <Compile Include="VerticalKey\VerticalKeyValidator.cs" />
-    <Compile Include="ChiperVerticalShiftMatrixProperties.cs" />
+    <Compile Include="Cryptography-process\ChiperVerticalShiftMatrixProperties.cs" />
     <Compile Include="Models\VerticalShiftCiperModel.cs" />
     <Compile Include="VerticalKey\Validations\VerticalKeyDuplicateCheck.cs" />
     <Compile Include="VerticalKey\VerticalKeyInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\VerticalKeyModel.cs" />
     <Compile Include="VerticalKey\Validations\VerticalKeySymbolExceed.cs" />
-    <Compile Include="Cryptography process\VerticalShiftCiperBase.cs" />
+    <Compile Include="Cryptography-process\VerticalShiftCiperBase.cs" />
     <Compile Include="VerticalShiftCiperFactory.cs" />
     <Compile Include="VerticalShiftCiperMenu.cs" />
   </ItemGroup>
@@ -70,5 +72,6 @@
       <Name>ChipersUtility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

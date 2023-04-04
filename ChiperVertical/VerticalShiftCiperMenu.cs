@@ -11,10 +11,12 @@ namespace ChiperVerticalShift
 
         public override void FillMenuList()
         {
-            Options = new List<string>();
-            Options.Add("Encryption algorithm");
-            Options.Add("Decryption algorithm");
-            Options.Add("Go Back");
+            Options = new List<string>
+            {
+                "Encryption algorithm",
+                "Decryption algorithm",
+                "Go Back"
+            };
         }
 
         public override void MenuSelector()

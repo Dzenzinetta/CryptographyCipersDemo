@@ -14,12 +14,29 @@ namespace VerticalShiftCiper
             return new VerticalKeyInput(TextLength);
         }
 
-        public static ChiperVerticalShiftMatrixProperties CreateVerticalShiftMatrix(IVerticalShiftCiperModel model)
+        public static VerticalShiftCiperMatrix CreateVerticalShiftMatrix(IVerticalShiftCiperModel model)
         {
-            return new ChiperVerticalShiftMatrixProperties(model);
+            return new VerticalShiftCiperMatrix(model);
         }
 
-        public static 
+        public static VerticalKeyValidator CreateVerticalKeyValidator()
+        {
+            return new VerticalKeyValidator();
+        }
 
+        public static VerticalKeyModel CreateVerticalKeyModel(int keyLength)
+        {
+            return new VerticalKeyModel(keyLength);
+        }
+
+        public static IVerticalShiftCiperBase CreateVerticalShitfEncryptor()
+        {
+            return new VerticalShiftCiperEncryption();
+        }
+
+        public static IVerticalShiftCiperBase CreateVerticalShitfDecryptor()
+        {
+            return new VerticalShiftCiperDecryption();
+        }
     }
 }

@@ -1,20 +1,21 @@
-﻿using ChipersUtility;
-
+﻿
 namespace AffineCiper
 {
     public abstract class ProgramStart : IAffineProgramStart
     {
 
-        public abstract IAffineProcessBase CryptoType { get; }
+        protected IAffineProcessBase CryptoType { get; set; }
 
         public IAffineCryptographyTypeBase GetProcessType()
         {
             if (CryptoType is AffineEncryptionProcess)
+            {
                 return AffineCiperFactory.GetAffineEncryptor();
+            }
             return AffineCiperFactory.GetAffineDecryptor();
         }
 
-        public void StartAffineCiperProgramm()
+        public void StartAffineCiperProgram()
         {
             CryptoType.AdditiveKeyObject = AffineCiperFactory.CreateAdditiveKey();
             CryptoType.MultiplicativeKeyObject = AffineCiperFactory.CreateMultiplicativeKey();

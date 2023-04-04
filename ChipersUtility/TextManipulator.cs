@@ -47,5 +47,13 @@ namespace ChipersUtility
             Console.WriteLine(msg);
         }
 
+		public static void ClearAndReturnLine(int lineNumber)
+		{
+            Console.SetCursorPosition(0, Console.CursorTop - lineNumber);
+            for (int h = 0; h < lineNumber; h++)
+                Console.Write(new string(' ', Console.BufferWidth));
+            Console.SetCursorPosition(0, Console.CursorTop - lineNumber);
+		}
+
     }
 }

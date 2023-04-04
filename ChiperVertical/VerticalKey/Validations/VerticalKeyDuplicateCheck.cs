@@ -2,7 +2,7 @@
 
 namespace VerticalShiftCiper
 {
-    class VerticalKeyDuplicateCheck : IVerticalKeyValidationModel
+    public sealed class VerticalKeyDuplicateCheck : IVerticalKeyValidationModel
     {
         public bool IsValidationFail(VerticalKeyModel verticalKeyModel)
         {
@@ -10,9 +10,9 @@ namespace VerticalShiftCiper
             return verticalKey.Length != verticalKey.Distinct().Count();
         }
 
-        public string GetErrorMessage(VerticalKeyModel verticalKeyModel)
+        public string SendErrorMessage(VerticalKeyModel verticalKeyModel)
         {
-            return $"You input repeated symbol.\nFor this Chiper that's restricted.\n\t Please, try again";
+            return $"You input repeated symbol.\nFor this Ciper that's restricted.\n\t Please, try again";
         }
     }
 }

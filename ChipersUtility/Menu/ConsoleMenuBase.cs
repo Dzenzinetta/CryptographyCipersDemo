@@ -40,6 +40,7 @@ namespace ChipersUtility
             }
             return newOption.Insert(differ / 2, rawOption);
         }
+
         private void DispalayMenu()
         {
             for (int i = 0; i < Options.Count; i++)

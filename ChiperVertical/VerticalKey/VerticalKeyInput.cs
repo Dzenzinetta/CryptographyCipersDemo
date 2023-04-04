@@ -7,6 +7,7 @@ namespace VerticalShiftCiper
 	public class VerticalKeyInput
 	{
 		private readonly VerticalKeyValidator _verticalKeyValidator;
+		private VerticalKeyModel _verticalKeyModel;
 
 		private const int MinimalLengthForDivider = 7;
 		private readonly int _wordLength;
@@ -18,39 +19,43 @@ namespace VerticalShiftCiper
 
 		public VerticalKeyInput(int wordLength)
 		{
-			_verticalKeyValidator = new VerticalKeyValidator();
+			_verticalKeyValidator = VerticalShiftCiperFactory.CreateVerticalKeyValidator();
 			_wordLength = wordLength;
 		}
 
 		public List<int> GetVerticalKeyFromConsole()
 		{
-			//InputFromConsole inputFromConsole = new InputFromConsole();
-
-			VerticalKeyModel verticalKeyModel = new VerticalKeyModel
-			{
-				AllowedKeyLengthForVerticalChiper = GetKeyLength()
-			};
+			CreateKeyModel();
 
 			Console.WriteLine($"{ _titleForInput }\n\n");
 
-			for (int i = 0; i < verticalKeyModel.AllowedKeyLengthForVerticalChiper; i++)
+			for (int i = 0; i < _verticalKeyModel.AllowedKeyLengthForVerticalCiper; i++)
 			{
-				do
+                Console.WriteLine();
+				Console.WriteLine("Your key: {0}", String.Join(", ", _verticalKeyModel.VerticalKey));
+
+                do
 				{
-					string tmpTitle = $"Input {i + 1} - symbol from {verticalKeyModel.AllowedKeyLengthForVerticalChiper} and press Enter";
+					string tmpTitle = $"Input {i + 1} - symbol from {_verticalKeyModel.AllowedKeyLengthForVerticalCiper} and press Enter";
 
-					verticalKeyModel.SingleElementOfVerticalKey = InputFromConsole.GetInteger(tmpTitle);
+					_verticalKeyModel.SingleElementOfVerticalKey = InputFromConsole.GetInteger(tmpTitle);
 
-					verticalKeyModel.VerticalKey.Insert(i, verticalKeyModel.SingleElementOfVerticalKey);
+					_verticalKeyModel.VerticalKey.Insert(i, _verticalKeyModel.SingleElementOfVerticalKey);
 
-					if (_verticalKeyValidator.IsValidationFail(verticalKeyModel))
-						verticalKeyModel.VerticalKey.RemoveAt(i);
+					TextManipulator.ClearAndReturnLine(4);
+					if (_verticalKeyValidator.IsValidationFail(_verticalKeyModel))
+					{
+						TextManipulator.ClearAndReturnLine(1);
+						Console.WriteLine(_verticalKeyValidator.GetErrorMessage());
+						_verticalKeyModel.VerticalKey.RemoveAt(i);
+					}
 
 				} while (_verticalKeyValidator.IsNotValid);
+
 			}
 
 			Console.WriteLine("Validation passed. Good Vertical Key!");
-			return verticalKeyModel.VerticalKey;
+			return _verticalKeyModel.VerticalKey;
 		}
 
 		private int GetKeyLength()
@@ -58,10 +63,19 @@ namespace VerticalShiftCiper
 			double wordLengthRoot = Math.Sqrt(_wordLength);
 
 			if (_wordLength <= MinimalLengthForDivider)
+			{
 				return _wordLength;
+			}
 			if (wordLengthRoot - (int)wordLengthRoot == 0.0)
+			{
 				return (int)wordLengthRoot;
+			}
 			return (int)wordLengthRoot + 1;
+		}
+
+		private void CreateKeyModel()
+		{
+			_verticalKeyModel = VerticalShiftCiperFactory.CreateVerticalKeyModel(GetKeyLength());
 		}
 	}
 

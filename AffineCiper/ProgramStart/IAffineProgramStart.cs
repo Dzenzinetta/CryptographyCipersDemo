@@ -3,10 +3,10 @@ namespace AffineCiper
 {
     public interface IAffineProgramStart
     {
-        public IAffineProcessBase CryptoType { get; }
+        //public IAffineProcessBase CryptoType { get; }
         
         IAffineCryptographyTypeBase GetProcessType();
 
-        void StartAffineCiperProgramm();
+        void StartAffineCiperProgram();
     }
 }

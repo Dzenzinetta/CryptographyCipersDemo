@@ -5,12 +5,12 @@ namespace VerticalShiftCiper
 {
     public abstract class VerticalShiftCiperBase : IVerticalShiftCiperBase
     {
-        protected abstract string Greeteengs { get; }
+        protected abstract string Greetings { get; }
         protected abstract string Rules { get; }
 
-        private VerticalKeyInput _verticalKeyInput;
         protected IVerticalShiftCiperModel _verticalShiftCiperModel;
-        protected ChiperVerticalShiftMatrixProperties _matrixProperties;
+        protected VerticalShiftCiperMatrix _matrixProperties;
+        private VerticalKeyInput _verticalKeyInput;
 
         protected VerticalShiftCiperBase()
         {
@@ -20,7 +20,7 @@ namespace VerticalShiftCiper
         public void VerticalShiftCiperMain()
         {
             Console.Clear();
-            Console.WriteLine($"{Greeteengs}");
+            Console.WriteLine($"{Greetings}");
 
             Console.WriteLine($"{Rules}");
             Console.ReadKey();
@@ -32,16 +32,16 @@ namespace VerticalShiftCiper
             Console.WriteLine("2. Getting Key:");
             GetVerticalKey();
 
-            Console.WriteLine("3. Calculating matrix for Vertical Shift ciper");
+            Console.WriteLine("3. Calculating matrix for Vertical Shift Ciper");
             PrepareVerticalMatrixForCiper();
             GetVerticalCiperMatrix();
 
             Console.WriteLine($"4. Output result:");
-            VerticalShiftCiperCryptedText();
-            Console.WriteLine($"\n\t{_verticalShiftCiperModel.TextAfterChiperManipulations}");
+            VerticalShiftCiperCryptoText();
+            OutputCryptoText();
         }
 
-        protected abstract void VerticalShiftCiperCryptedText();
+        protected abstract void VerticalShiftCiperCryptoText();
 
         protected abstract void GetVerticalCiperMatrix();
 
@@ -67,12 +67,14 @@ namespace VerticalShiftCiper
             _matrixProperties = VerticalShiftCiperFactory.CreateVerticalShiftMatrix(_verticalShiftCiperModel);
             _matrixProperties.GetMatrixProperties();
 
-            _verticalShiftCiperModel.MatrixColumnCount = _matrixProperties.ColumnCount;
-            _verticalShiftCiperModel.MatrixRowCount = _matrixProperties.RowCount;
-
-            _verticalShiftCiperModel.MatrixForVerticalChiper
+            _verticalShiftCiperModel.MatrixForVerticalCiper
                 = new char[_verticalShiftCiperModel.MatrixRowCount, _verticalShiftCiperModel.MatrixColumnCount];
         }
 
+        private void OutputCryptoText()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"\t{_verticalShiftCiperModel.TextAfterCiperManipulations}");
+        }
     }
 }

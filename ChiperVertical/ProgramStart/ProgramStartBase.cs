@@ -1,8 +1,9 @@
 ﻿
 namespace VerticalShiftCiper
 {
-    class ProgrammStart
+    public abstract class ProgramStartBase : IVerticalShiftProgramStart
     {
+
         public static void Main()
         {
             //ChiperVerticalShiftMain main = new ChiperVerticalShiftMain();
@@ -14,6 +15,9 @@ namespace VerticalShiftCiper
             encryptor.VerticalShiftCiperMain();
         }
 
-
+        public void StartVerticalShiftCiperProgram()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

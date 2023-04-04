@@ -5,7 +5,7 @@ namespace VerticalShiftCiper
     {
         bool IsValidationFail(VerticalKeyModel verticalKeyModel);
 
-        string GetErrorMessage(VerticalKeyModel verticalKeyModel);
+        string SendErrorMessage(VerticalKeyModel verticalKeyModel);
 
     }
 }

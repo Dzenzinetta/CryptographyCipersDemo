@@ -1,13 +1,13 @@
 ﻿using ChipersUtility;
 using System;
 
-
+/*
 namespace VerticalShiftCiper
 {
     partial class ChiperVerticalShiftMain
 	{
 		private VerticalShiftCiperModel _chiperVerticalShiftModel = new VerticalShiftCiperModel();
-		private ChiperVerticalShiftMatrixProperties _matrixProperties;
+		private VerticalShiftCiperMatrix _matrixProperties;
 
 		private string _textAfterManipulations = string.Empty;
 
@@ -23,7 +23,7 @@ namespace VerticalShiftCiper
 			_chiperVerticalShiftModel.VerticalKeyFromConsole = verticalKeyInput.GetVerticalKeyFromConsole();
 			_chiperVerticalShiftModel.KeyLength = _chiperVerticalShiftModel.VerticalKeyFromConsole.Count;
 
-			_matrixProperties = new ChiperVerticalShiftMatrixProperties(_chiperVerticalShiftModel);
+			_matrixProperties = new VerticalShiftCiperMatrix(_chiperVerticalShiftModel);
 			_matrixProperties.GetMatrixProperties();
 
 			_chiperVerticalShiftModel.MatrixColumnCount = _matrixProperties.ColumnCount;
@@ -76,5 +76,5 @@ namespace VerticalShiftCiper
 		}
 
 	}
-
 }
+*/

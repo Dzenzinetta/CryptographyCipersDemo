@@ -5,23 +5,17 @@ namespace VerticalShiftCiper
 {
     public sealed class VerticalKeyValidator
     {
-        private List<IVerticalKeyValidationModel> _validations = new List<IVerticalKeyValidationModel>();
-
         public bool IsNotValid;
+
+        private readonly List<IVerticalKeyValidationModel> _validations;
+
+        private string _errorMessageFromValidator { get; set; }
 
         public VerticalKeyValidator()
         {
-            _validations = FillValidationList();
-        }
-
-        private List<IVerticalKeyValidationModel> FillValidationList()
-        {
-            List<IVerticalKeyValidationModel> output = new List<IVerticalKeyValidationModel>();
-
-            output.Add(new VerticalKeyDuplicateCheck());
-            output.Add(new VerticalKeySymbolExceed());
-
-            return output;
+            _validations = new List<IVerticalKeyValidationModel>();
+            _errorMessageFromValidator = "No error's";
+            FillValidationList();
         }
 
         public bool IsValidationFail(VerticalKeyModel verticalKeyModel)
@@ -30,11 +24,23 @@ namespace VerticalShiftCiper
             {
                 if (validation.IsValidationFail(verticalKeyModel))
                 {
-                    Console.WriteLine(validation.GetErrorMessage(verticalKeyModel));
+                    _errorMessageFromValidator = validation.SendErrorMessage(verticalKeyModel);
                     return IsNotValid = true;
                 }
             }
             return IsNotValid = false;
         }
+        
+        public string GetErrorMessage()
+        {
+            return _errorMessageFromValidator;
+        }
+
+        private void FillValidationList()
+        {
+            _validations.Add(new VerticalKeyDuplicateCheck());
+            _validations.Add(new VerticalKeySymbolExceed());
+        }
+
     }
 }

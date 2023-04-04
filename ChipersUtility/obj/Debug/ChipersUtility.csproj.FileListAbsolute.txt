@@ -38,3 +38,11 @@ C:\Users\a-kustov\YandexDisk\develop\c-sharp\CryptographyCipersDemo\ChipersUtili
 C:\Users\a-kustov\YandexDisk\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
 C:\Users\a-kustov\YandexDisk\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
 C:\Users\a-kustov\YandexDisk\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe.config
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.exe
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\bin\Debug\ChipersUtility.pdb
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.AssemblyReference.cache
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.SuggestedBindingRedirects.cache
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.csproj.CoreCompileInputs.cache
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.exe
+R:\share\develop\c-sharp\CryptographyCipersDemo\ChipersUtility\obj\Debug\ChipersUtility.pdb

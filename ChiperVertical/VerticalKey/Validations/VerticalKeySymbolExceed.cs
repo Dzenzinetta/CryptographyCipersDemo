@@ -1,16 +1,16 @@
 ﻿
 namespace VerticalShiftCiper
 {
-    class VerticalKeySymbolExceed : IVerticalKeyValidationModel
+    public sealed class VerticalKeySymbolExceed : IVerticalKeyValidationModel
     {
         public bool IsValidationFail(VerticalKeyModel verticalKeyModel)
         {
-            return verticalKeyModel.SingleElementOfVerticalKey > verticalKeyModel.AllowedKeyLengthForVerticalChiper;
+            return verticalKeyModel.SingleElementOfVerticalKey > verticalKeyModel.AllowedKeyLengthForVerticalCiper;
         }
 
-        public string GetErrorMessage(VerticalKeyModel verticalKeyModel)
+        public string SendErrorMessage(VerticalKeyModel verticalKeyModel)
         {
-            return $"Symbol \"{ verticalKeyModel.SingleElementOfVerticalKey }\" numerically greater than the length ({ verticalKeyModel.AllowedKeyLengthForVerticalChiper }).\n\t Please, try again";
+            return $"\nSymbol \"{ verticalKeyModel.SingleElementOfVerticalKey }\" numerically greater than the length ({ verticalKeyModel.AllowedKeyLengthForVerticalCiper }).\n\t Please, try again";
         }
     }
 }

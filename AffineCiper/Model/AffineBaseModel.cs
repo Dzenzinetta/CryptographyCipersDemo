@@ -10,6 +10,6 @@ namespace AffineCiper
 
         public string TextFromConsole { get; set; }
 
-        public string TextAfterChiperManipulations { get; set; }
+        public string TextAfterCiperManipulations { get; set; }
     }
 }
