@@ -1,29 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChipersUtility
 {
     public static class InputFromConsoleValidator
     {
-		private static bool IsInputContainZero(string inputKey)
-		{
-			return (inputKey.Contains("0"));
-		}
+		
 
-		public static string RemoveSpace(string strInput)
+		public static string RemoveSpace(string input)
 		{
 			string inputSpaceless = string.Empty;
-			for (int i = 0; i < strInput.Length; i++)
+			for (int i = 0; i < input.Length; i++)
 			{
-                if (strInput[i] != ' ')
+                if (input[i] != ' ')
 				{
-                    inputSpaceless += strInput[i];
+                    inputSpaceless += input[i];
                 }
             }
             return inputSpaceless;
+		}
+
+		public static string RemoveSpacesLinq(string input)
+		{
+			return new string(input.Where(c => c!=' ').ToArray());
 		}
 
 		public static bool DigitalInputValidationPass(string input, out int result)
@@ -40,7 +39,7 @@ namespace ChipersUtility
 
 		public static bool StringIputValidationPass(string input)
 		{
-			if (string.IsNullOrWhiteSpace(input))
+			if (String.IsNullOrWhiteSpace(input))
 			{
 				Console.WriteLine("Error! No input detected");
 				return false;
@@ -72,6 +71,11 @@ namespace ChipersUtility
 			}
 			badSymbol = 0;
 			return false;
+		}
+
+		private static bool IsInputContainZero(string inputKey)
+		{
+			return (inputKey.Contains("0"));
 		}
 	}
 }

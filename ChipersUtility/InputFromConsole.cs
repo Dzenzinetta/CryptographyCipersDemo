@@ -16,7 +16,7 @@ namespace ChipersUtility
 
             } while (StringIputValidationPass(_tmpInput) == false);
 
-            return RemoveSpace(_tmpInput.ToUpper());
+            return RemoveSpacesLinq(_tmpInput.ToUpper());
         }
 
         public static int GetInteger(string message)

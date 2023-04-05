@@ -50,7 +50,7 @@ namespace ChipersUtility
 		public static void ClearAndReturnLine(int lineNumber)
 		{
             Console.SetCursorPosition(0, Console.CursorTop - lineNumber);
-            for (int h = 0; h < lineNumber; h++)
+            for (int i = 0; i < lineNumber; i++)
                 Console.Write(new string(' ', Console.BufferWidth));
             Console.SetCursorPosition(0, Console.CursorTop - lineNumber);
 		}
