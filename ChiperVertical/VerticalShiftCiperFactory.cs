@@ -29,14 +29,24 @@ namespace VerticalShiftCiper
             return new VerticalKeyModel(keyLength);
         }
 
-        public static IVerticalShiftCiperBase CreateVerticalShitfEncryptor()
+        public static IVerticalShiftCiperBase CreateVerticalShitfEncryptor(IVerticalShiftCiperModel _model)
         {
-            return new VerticalShiftCiperEncryption();
+            return new VerticalShiftCiperEncryption(_model);
         }
 
-        public static IVerticalShiftCiperBase CreateVerticalShitfDecryptor()
+        public static IVerticalShiftCiperBase CreateVerticalShitfDecryptor(IVerticalShiftCiperModel _model)
         {
-            return new VerticalShiftCiperDecryption();
+            return new VerticalShiftCiperDecryption(_model);
+        }
+
+        public static IVerticalShiftProgramStart CreateVerticalShiftCiperEncryptor()
+        {
+            return new EncryptorProgramStart();
+        }
+
+        public static IVerticalShiftProgramStart CreateVerticalShiftCiperDecryptor()
+        {
+            return new DecryptorProgramStart();
         }
     }
 }

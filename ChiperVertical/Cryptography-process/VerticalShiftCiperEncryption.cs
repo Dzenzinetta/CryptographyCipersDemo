@@ -2,10 +2,13 @@
 {
     public class VerticalShiftCiperEncryption : VerticalShiftCiperBase
     {
+
         protected override string Greetings { get; } = "Welcome to Program that demonstrate Vertical Shift Ciper encryption.\n\n";
 
         protected override string Rules { get; } = "Hello World!";
-
+        
+        public VerticalShiftCiperEncryption(IVerticalShiftCiperModel model) : base(model) {}
+        
         protected override void GetVerticalCiperMatrix()
         {
 			_matrixProperties.GetEncryptionMatrix();

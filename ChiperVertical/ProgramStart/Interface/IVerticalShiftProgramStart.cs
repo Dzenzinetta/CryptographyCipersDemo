@@ -1,6 +1,6 @@
 ﻿namespace VerticalShiftCiper
 {
-    interface IVerticalShiftProgramStart
+    public interface IVerticalShiftProgramStart
     {
         void StartVerticalShiftCiperProgram();
     }

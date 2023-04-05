@@ -7,7 +7,7 @@ namespace VerticalShiftCiper
 	public class VerticalKeyInput
 	{
 		private readonly VerticalKeyValidator _verticalKeyValidator;
-		private VerticalKeyModel _verticalKeyModel;
+		private readonly VerticalKeyModel _verticalKeyModel;
 
 		private const int MinimalLengthForDivider = 7;
 		private readonly int _wordLength;
@@ -21,12 +21,11 @@ namespace VerticalShiftCiper
 		{
 			_verticalKeyValidator = VerticalShiftCiperFactory.CreateVerticalKeyValidator();
 			_wordLength = wordLength;
+			_verticalKeyModel = CreateKeyModel();
 		}
 
 		public List<int> GetVerticalKeyFromConsole()
 		{
-			CreateKeyModel();
-
 			Console.WriteLine($"{ _titleForInput }\n\n");
 
 			for (int i = 0; i < _verticalKeyModel.AllowedKeyLengthForVerticalCiper; i++)
@@ -73,9 +72,9 @@ namespace VerticalShiftCiper
 			return (int)wordLengthRoot + 1;
 		}
 
-		private void CreateKeyModel()
+		private VerticalKeyModel CreateKeyModel()
 		{
-			_verticalKeyModel = VerticalShiftCiperFactory.CreateVerticalKeyModel(GetKeyLength());
+			return VerticalShiftCiperFactory.CreateVerticalKeyModel(GetKeyLength());
 		}
 	}
 

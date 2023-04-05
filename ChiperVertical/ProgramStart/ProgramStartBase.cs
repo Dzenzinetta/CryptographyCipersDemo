@@ -4,11 +4,12 @@ namespace VerticalShiftCiper
     public abstract class ProgramStartBase : IVerticalShiftProgramStart
     {
         protected IVerticalShiftCiperBase _ciperBase;
-        public static void Main()
-        {
-            IVerticalShiftCiperBase encryptor = new VerticalShiftCiperEncryption();
+        protected IVerticalShiftCiperModel _verticalShiftCiperModel;
 
-            encryptor.VerticalShiftCiperMain();
+        protected ProgramStartBase()
+        {
+           _verticalShiftCiperModel = VerticalShiftCiperFactory.CreateVerticalShiftModel();
+           _ciperBase= GetVerticalShiftCiperProgramType();
         }
 
         public void StartVerticalShiftCiperProgram()
@@ -16,6 +17,6 @@ namespace VerticalShiftCiper
             _ciperBase?.VerticalShiftCiperMain();
         }
 
-        protected abstract void GetVerticalShiftCiperProgramType();
+        protected abstract IVerticalShiftCiperBase GetVerticalShiftCiperProgramType();
     }
 }

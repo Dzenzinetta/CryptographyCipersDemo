@@ -1,5 +1,6 @@
 ﻿using ChipersUtility;
 using System.Collections.Generic;
+using VerticalShiftCiper;
 
 namespace ChiperVerticalShift
 {
@@ -8,6 +9,8 @@ namespace ChiperVerticalShift
         public override string ProgramTitle { get; } = "Vertical Shift";
 
         public override List<string> Options { get; set; }
+
+        private IVerticalShiftProgramStart _starter;
 
         public override void FillMenuList()
         {
@@ -23,21 +26,21 @@ namespace ChiperVerticalShift
         {
             TextManipulator.ResetCursorVisible();
 
-            //switch (SelectedOption)
-            //{
-            //    case 0:
-            //        {
-            //            _starter = AffineCiperFactory.CreateEnctyptorStarter();
-            //            _starter.StartAffineCiperProgramm();
-            //            break;
-            //        }
-            //    case 1:
-            //        {
-            //            _starter = AffineCiperFactory.CreateDectyptorStarter();
-            //            _starter.StartAffineCiperProgramm();
-            //            break;
-            //        }
-            //}
+            switch (SelectedOption)
+            {
+                case 0:
+                    {
+                        _starter = VerticalShiftCiperFactory.CreateVerticalShiftCiperEncryptor();
+                        _starter.StartVerticalShiftCiperProgram();
+                        break;
+                    }
+                case 1:
+                    {
+                        _starter = VerticalShiftCiperFactory.CreateVerticalShiftCiperDecryptor();
+                        _starter.StartVerticalShiftCiperProgram();
+                        break;
+                    }
+            }
         }
     }
 }

@@ -3,9 +3,12 @@ namespace VerticalShiftCiper
 {
     public sealed class VerticalShiftCiperDecryption : VerticalShiftCiperBase
     {
+
         protected override string Greetings { get; } = "Welcome to Program that demonstrate Vertical Shift Ciper decryption.\n\n";
 
         protected override string Rules { get; } = "Hello World!";
+
+        public VerticalShiftCiperDecryption(IVerticalShiftCiperModel model) : base(model) {}
 
         protected override void GetVerticalCiperMatrix()
         {
