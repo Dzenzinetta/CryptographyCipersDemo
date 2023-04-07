@@ -13,13 +13,15 @@ namespace ConsoleUI
 
         public override void FillMenuList()
         {
-            Options = new List<string>();
-            Options.Add("Affine Ciper");
-            Options.Add("Vegenere Ciper");
-            Options.Add("Playfair Ciper");
-            Options.Add("Hill Ciper");
-            Options.Add("Vertical Shift Ciper");
-            Options.Add("Exit"); 
+            Options = new List<string>
+            {
+                "Affine Ciper",
+                "Vegenere Ciper",
+                "Playfair Ciper",
+                "Hill Ciper",
+                "Vertical Shift Ciper",
+                "Exit"
+            };
         }
 
         public override void MenuSelector()

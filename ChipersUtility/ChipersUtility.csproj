@@ -45,13 +45,13 @@
   <ItemGroup>
     <Compile Include="Model\ChiperBaseModel.cs" />
     <Compile Include="Model\ICiperBaseModel.cs" />
-    <Compile Include="ITextInput.cs" />
-    <Compile Include="InputFromConsole.cs" />
-    <Compile Include="InputFromConsoleValidator.cs" />
+    <Compile Include="Text-Process\Interface\ITextInput.cs" />
+    <Compile Include="Text-Process\InputFromConsole.cs" />
+    <Compile Include="Text-Process\InputFromConsoleValidator.cs" />
     <Compile Include="Menu\ConsoleMenuBase.cs" />
     <Compile Include="Menu\IConsoleMenuBase.cs" />
     <Compile Include="Menu\QuestioinAfterProgram.cs" />
-    <Compile Include="TextManipulator.cs" />
+    <Compile Include="Text-Process\TextManipulator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

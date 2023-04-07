@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiperVerticalShiftMain.cs" />
     <Compile Include="Cryptography-process\Interface\IVerticalShiftCiperBase.cs" />
     <Compile Include="Cryptography-process\VerticalShiftCiperDecryption.cs" />
     <Compile Include="Cryptography-process\VerticalShiftCiperEncryption.cs" />
@@ -63,8 +62,8 @@
     <Compile Include="Models\VerticalKeyModel.cs" />
     <Compile Include="VerticalKey\Validations\VerticalKeySymbolExceed.cs" />
     <Compile Include="Cryptography-process\VerticalShiftCiperBase.cs" />
-    <Compile Include="VerticalShiftCiperFactory.cs" />
-    <Compile Include="VerticalShiftCiperMenu.cs" />
+    <Compile Include="Factory\VerticalShiftCiperFactory.cs" />
+    <Compile Include="Menu\VerticalShiftCiperMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

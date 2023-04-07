@@ -8,15 +8,16 @@ namespace VegenereCiper
 
         public override List<string> Options { get; set; }
 
-        private IVegenereProgramBase _encryptionProgram;
-        private IVegenereProgramBase _decryptorProgram;
+        private IVegenereProgramBase _ciperBase;
         public override void FillMenuList()
         {
-            Options = new List<string>();
-            Options.Add("Encryption algorithm");
-            Options.Add("Decryption algorithm");
-            Options.Add("Output alphabet table");
-            Options.Add("Go Back");
+            Options = new List<string>
+            {
+                "Encryption algorithm",
+                "Decryption algorithm",
+                "Output alphabet table",
+                "Go Back"
+            };
         }
 
         public override void MenuSelector()
@@ -26,14 +27,14 @@ namespace VegenereCiper
             {
                 case 0:
                     {
-                        _encryptionProgram = VegenereCiperFactory.CreateVegenereEncryptionProgram();
-                        _encryptionProgram.VegenereProgramMain();
+                        _ciperBase = VegenereCiperFactory.CreateVegenereEncryptionProgram();
+                        _ciperBase.VegenereProgramMain();
                         break;
                     }
                 case 1:
                     {
-                        _decryptorProgram = VegenereCiperFactory.CreateVegenerDecryptionProgram();
-                        _decryptorProgram.VegenereProgramMain();
+                        _ciperBase = VegenereCiperFactory.CreateVegenerDecryptionProgram();
+                        _ciperBase.VegenereProgramMain();
                         break;
                     }
                 case 2:
