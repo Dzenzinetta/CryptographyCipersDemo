@@ -9,17 +9,17 @@ namespace ChiperHill
         private string _textForCiper = string.Empty;
         private bool _isValid;
 
-        private readonly ITextInput _inputType; 
+        //private readonly ITextInput _inputType; 
 
         public HillCiperTextInput()
         {
             _textForCiper = string.Empty;
-            _inputType = UtilityControl.CreateInputFromConsole();
+            //_inputType = UtilityControl.CreateInputFromConsole();
         }
 
         public string GetText()
         {
-            _textForCiper = _inputType.GetString(Promt);
+            _textForCiper = InputFromConsole.GetString(Promt);
             _isValid = TextValidations.IsTextLengthValid(_textForCiper);
 
             return _textForCiper;

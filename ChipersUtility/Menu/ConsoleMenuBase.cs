@@ -5,32 +5,30 @@ namespace ChipersUtility
 {
     public abstract class ConsoleMenuBase : IConsoleMenuBase
     {
-        public abstract string ProgramTitle { get; }
-        public abstract List<string> Options { get; set; }
-
-        public int SelectedOption = 0;
-
         private const int DefaultLineLength = 30;
+        private const ConsoleColor Black = ConsoleColor.Black;
+        private const ConsoleColor White = ConsoleColor.White;
+       
+        protected List<string> Options { get; set; }
 
-        private readonly ConsoleColor _black = ConsoleColor.Black;
-        private readonly ConsoleColor _white = ConsoleColor.White;
+        protected int selectedOption = 0;
 
         public abstract void FillMenuList();
         public abstract void MenuSelector();
-
+        protected abstract string SetProgramTitle();
 
         public void RunMenu()
         {
-            Console.Title = ProgramTitle + "Ciper demonstration program";
+            Console.Title = SetProgramTitle() + "Ciper demonstration program";
             //ResetCursorVisible();
             FillMenuList();
             
-            SelectedOption = GetOptionFromMenu();
+            selectedOption = GetOptionFromMenu();
             MenuSelector();   
         }
     
 
-        private string GetOptionCentered(string rawOption)
+        private string SetOptionCentered(string rawOption)
         {
             string newOption = string.Empty;
             int differ = DefaultLineLength - rawOption.Length;
@@ -45,17 +43,17 @@ namespace ChipersUtility
         {
             for (int i = 0; i < Options.Count; i++)
             {
-                string option = GetOptionCentered(Options[i]);
+                string option = SetOptionCentered(Options[i]);
                 //string prefix;
-                if (i == SelectedOption)
+                if (i == selectedOption)
                 {
                     //prefix = "*";
-                    SetConsoleTextColor(_black, _white);
+                    SetConsoleTextColor(Black, White);
                 }
                 else
                 {
                     //prefix = " ";
-                    SetConsoleTextColor(_white, _black);
+                    SetConsoleTextColor(White, Black);
                 }
 
                 Console.WriteLine($"<< {option} >>");
@@ -82,25 +80,27 @@ namespace ChipersUtility
 
                 if (pressedKey == ConsoleKey.UpArrow)
                 {
-                    SelectedOption--;
-                    if (SelectedOption == -1)
+                    selectedOption--;
+                    if (selectedOption == -1)
                     {
-                        SelectedOption = Options.Count - 1;
+                        selectedOption = Options.Count - 1;
                     }
                 }
                 else if (pressedKey == ConsoleKey.DownArrow)
                 {
-                    SelectedOption++;
-                    if (SelectedOption == Options.Count)
+                    selectedOption++;
+                    if (selectedOption == Options.Count)
                     {
-                        SelectedOption = 0;
+                        selectedOption = 0;
                     }
                 }
 
             } while (pressedKey != ConsoleKey.Enter);
 
-            return SelectedOption;
+            return selectedOption;
         }
+
+     
 
     }
 }

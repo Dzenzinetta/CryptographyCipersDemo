@@ -1,15 +1,10 @@
 ﻿using ChipersUtility;
-using AffineCiper;
-using VegenereCiper;
-using PlayfairCiper;
 
 namespace ConsoleUI
 {
     public class MainMenu : ConsoleMenuBase, IConsoleMenuBase
     {
-        public override List<string> Options { get; set; }
-
-        public override string ProgramTitle { get; } = "Cryptography Demonstration Software";
+        private IConsoleMenuBase _ciperMenu;
 
         public override void FillMenuList()
         {
@@ -27,24 +22,21 @@ namespace ConsoleUI
         public override void MenuSelector()
         {
             
-            switch (SelectedOption)
+            switch (selectedOption)
             {
             case 0:
                 {
-                    IConsoleMenuBase affineMenu = ConsoleUIFactory.CreateAffineMenu();
-                    affineMenu.RunMenu();
+                    _ciperMenu = ConsoleUIFactory.CreateAffineMenu();
                     break;
                 }
             case 1:
                 {
-                    VegenereCiperMenu vigenereCiper = ConsoleUIFactory.CreateVegenereCiperMenu();
-                    vigenereCiper.RunMenu();
+                    _ciperMenu = ConsoleUIFactory.CreateVegenereCiperMenu();
                     break;
                 }
             case 2:
                 {
-                    PlayfairCiperMenu playfairCiper = ConsoleUIFactory.CreatePlayfairCiperMenu();
-                    playfairCiper.RunMenu();
+                    _ciperMenu = ConsoleUIFactory.CreatePlayfairCiperMenu();
                     break;
                 }
             case 3:
@@ -55,8 +47,7 @@ namespace ConsoleUI
                 }
             case 4:
                 {
-                    Console.WriteLine("Not Complete");
-                    Console.ReadKey();
+                    _ciperMenu = ConsoleUIFactory.CreateVerticalShiftCiperMenu();
                     break;
                 }
             case 5:
@@ -67,9 +58,13 @@ namespace ConsoleUI
                 }
 
             }
-            ConsoleUIStart.RunMainMenu();
 
+            _ciperMenu.RunMenu();
         }
 
+        protected override string SetProgramTitle()
+        {
+            return "Cryptography Demonstration Software";
+        }
     }
 }

@@ -4,12 +4,8 @@ using VerticalShiftCiper;
 
 namespace ChiperVerticalShift
 {
-    public class VerticalShiftCiperMenu : ConsoleMenuBase, IConsoleMenuBase
+    public sealed class VerticalShiftCiperMenu : ConsoleMenuBase //, IConsoleMenuBase
     {
-        public override string ProgramTitle { get; } = "Vertical Shift";
-
-        public override List<string> Options { get; set; }
-
         private IVerticalShiftProgramStart _starter;
 
         public override void FillMenuList()
@@ -25,8 +21,7 @@ namespace ChiperVerticalShift
         public override void MenuSelector()
         {
             TextManipulator.ResetCursorVisible();
-
-            switch (SelectedOption)
+            switch (selectedOption)
             {
                 case 0:
                     {
@@ -41,6 +36,11 @@ namespace ChiperVerticalShift
                         break;
                     }
             }
+        }
+
+        protected override string SetProgramTitle()
+        {
+            return "Vertical Shift";
         }
     }
 }

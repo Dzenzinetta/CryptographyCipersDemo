@@ -5,7 +5,7 @@ namespace ChiperHill
 {
     public class HillCiperConsole
 	{
-		private readonly ITextInput _consoleInput;
+		//private readonly ITextInput _consoleInput;
 		private readonly HillCiperTextInput _textInput;
 		private readonly HillCiperModel _model;
 		private MatrixOutput _matrix; 
@@ -13,7 +13,7 @@ namespace ChiperHill
 
 		public HillCiperConsole()
 		{
-			_consoleInput = UtilityControl.CreateInputFromConsole();
+			//_consoleInput = UtilityControl.CreateInputFromConsole();
 			_textInput = new HillCiperTextInput();
 			_model = new HillCiperModel();
 		}

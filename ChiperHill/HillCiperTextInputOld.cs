@@ -1,19 +1,18 @@
 ﻿using ChipersUtility;
-using static ChipersUtility.UtilityControl;
 
 namespace ChiperHill
 {
     public class HillCiperTextInputOld
     {
         private const string Promt = "Введите слово, которое хотите зашифровать (3 символа)";
-        private ITextInput _consoleInput;
+        //private ITextInput _consoleInput;
         
         private string _strOriginWord;
         private bool _isTextValid;
 
         public HillCiperTextInputOld()
         {
-            _consoleInput = CreateInputFromConsole();
+            //_consoleInput = CreateInputFromConsole();
         }
 
         
@@ -30,7 +29,7 @@ namespace ChiperHill
         }
 
         private string GetInput() 
-            => _consoleInput.GetString(Promt);
+            => InputFromConsole.GetString(Promt);
         
 
         private bool TextLengthValidaion() 

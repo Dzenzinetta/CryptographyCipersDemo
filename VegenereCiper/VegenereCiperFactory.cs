@@ -1,4 +1,6 @@
 ﻿
+using ChipersUtility;
+
 namespace VegenereCiper
 {
     public static class VegenereCiperFactory
@@ -23,5 +25,15 @@ namespace VegenereCiper
         {
             return new VegenereDecryptionProgram();
         }
+
+        public static IConsoleMenuBase CreateVegenereCiperMenu()
+        {
+            return new VegenereCiperMenu();
+        }
+        public static IProgramStartBase CreateVegenereCiperProgram()
+        {
+            return new VegenereProgram();
+        }
+
     }
 }

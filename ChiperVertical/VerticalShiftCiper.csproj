@@ -47,11 +47,11 @@
     <Compile Include="Cryptography-process\VerticalShiftCiperDecryption.cs" />
     <Compile Include="Cryptography-process\VerticalShiftCiperEncryption.cs" />
     <Compile Include="Models\Interface\IVerticalShiftCiperModel.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="VerticalShiftProgram.cs" />
     <Compile Include="ProgramStart\DecryptorProgramStart.cs" />
     <Compile Include="ProgramStart\EncryptorProgramStart.cs" />
     <Compile Include="ProgramStart\Interface\IVerticalShiftProgramStart.cs" />
-    <Compile Include="ProgramStart\ProgramStartBase.cs" />
+    <Compile Include="ProgramStart\VerticalShiftCiperStartBase.cs" />
     <Compile Include="VerticalKey\IVerticalKeyValidationModel.cs" />
     <Compile Include="VerticalKey\VerticalKeyValidator.cs" />
     <Compile Include="Cryptography-process\ChiperVerticalShiftMatrixProperties.cs" />

@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IProgramStartBase.cs" />
     <Compile Include="Model\ChiperBaseModel.cs" />
     <Compile Include="Model\ICiperBaseModel.cs" />
+    <Compile Include="ProgramStartBase.cs" />
     <Compile Include="Text-Process\Interface\ITextInput.cs" />
     <Compile Include="Text-Process\InputFromConsole.cs" />
     <Compile Include="Text-Process\InputFromConsoleValidator.cs" />

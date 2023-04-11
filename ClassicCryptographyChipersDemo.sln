@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipersUtility", "ChipersUtility\ChipersUtility.csproj", "{C7BD57C3-01AC-4B2F-B24D-6BE5D4282BB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiperVerticalShift", "ChiperVertical\ChiperVerticalShift.csproj", "{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerticalShiftCiper", "ChiperVertical\VerticalShiftCiper.csproj", "{F63D3ACA-037E-433B-B9A3-4B0F0CF17174}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiperPlayfair", "ChiperPlayfair\ChiperPlayfair.csproj", "{3C78D99A-CC9F-45D6-8855-B472779AE0CF}"
 EndProject

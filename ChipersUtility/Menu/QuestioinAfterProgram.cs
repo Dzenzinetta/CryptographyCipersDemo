@@ -3,27 +3,29 @@ using System.Linq;
 
 namespace ChipersUtility
 {
-    public class QuestioinAfterProgram
+    public static class QuestioinAfterProgram
     {
-        private const string _question = "Would you like to use this Ciper again or return to Main menu?(Y\\N)";
-        private string _tmpInput;
-        public bool Question()
+        private const string _questionPromt 
+            = "Would you like to use this Ciper again?(Y\\N)";
+        private static string _answer = String.Empty;
+
+        public static bool RepeatProgram()
         {
             Console.WriteLine("This program is done.");
             do
             {
-                _tmpInput = InputFromConsole.GetString(_question);
-            } while (QuestionAnswer(_tmpInput) != true);
+                _answer = InputFromConsole.GetString(_questionPromt);
+            } while (DoesAnswerCorrect(_answer) != true);
 
-            return ShouldRepeatProgram(_tmpInput);
+            return ShouldRepeatProgram(_answer);
         }
 
-        private bool QuestionAnswer(string input)
+        private static bool DoesAnswerCorrect(string input)
         {
-                return (input.Contains('Y') || input.Contains('N'));
+                return input.Contains('Y') || input.Contains('N');
         }
 
-        private bool ShouldRepeatProgram(string condition)
+        private static bool ShouldRepeatProgram(string condition)
         {
             return condition.Contains('Y');
         }

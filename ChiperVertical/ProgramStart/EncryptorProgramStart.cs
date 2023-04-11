@@ -1,7 +1,7 @@
 ﻿
 namespace VerticalShiftCiper
 {
-    public class EncryptorProgramStart : ProgramStartBase
+    public class EncryptorProgramStart : VerticalShiftCiperStartBase
     {
         protected override IVerticalShiftCiperBase GetVerticalShiftCiperProgramType()
         {

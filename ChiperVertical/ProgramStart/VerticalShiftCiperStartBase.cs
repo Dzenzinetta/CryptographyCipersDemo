@@ -1,15 +1,15 @@
 ﻿
 namespace VerticalShiftCiper
 {
-    public abstract class ProgramStartBase : IVerticalShiftProgramStart
+    public abstract class VerticalShiftCiperStartBase : IVerticalShiftProgramStart
     {
         protected IVerticalShiftCiperBase _ciperBase;
         protected IVerticalShiftCiperModel _verticalShiftCiperModel;
 
-        protected ProgramStartBase()
+        protected VerticalShiftCiperStartBase()
         {
            _verticalShiftCiperModel = VerticalShiftCiperFactory.CreateVerticalShiftModel();
-           _ciperBase= GetVerticalShiftCiperProgramType();
+           _ciperBase = GetVerticalShiftCiperProgramType();
         }
 
         public void StartVerticalShiftCiperProgram()

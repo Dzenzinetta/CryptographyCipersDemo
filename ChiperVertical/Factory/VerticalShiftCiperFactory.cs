@@ -1,4 +1,5 @@
 ﻿using ChipersUtility;
+using ChiperVerticalShift;
 
 namespace VerticalShiftCiper
 {
@@ -47,6 +48,16 @@ namespace VerticalShiftCiper
         public static IVerticalShiftProgramStart CreateVerticalShiftCiperDecryptor()
         {
             return new DecryptorProgramStart();
+        }
+
+        public static IConsoleMenuBase CreateVerticalShiftCiperMenu()
+        {
+            return new VerticalShiftCiperMenu();
+        }
+
+        public static IProgramStartBase CreateVerticalShiftProgram()
+        {
+            return new VerticalShiftProgram();
         }
     }
 }

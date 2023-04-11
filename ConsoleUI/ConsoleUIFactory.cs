@@ -2,6 +2,7 @@
 using AffineCiper;
 using VegenereCiper;
 using PlayfairCiper;
+using ChiperVerticalShift;
 
 namespace ConsoleUI
 {
@@ -17,20 +18,24 @@ namespace ConsoleUI
             return new AffineCiperMenu();
         }
 
-        public static VegenereCiperMain CreateVegenereMenu()
-        { 
-            return new VegenereCiperMain();
-        }
-
-        public static VegenereCiperMenu CreateVegenereCiperMenu()
+        public static IConsoleMenuBase CreateVegenereCiperMenu()
         {
             return new VegenereCiperMenu();
         }
 
-        public static PlayfairCiperMenu CreatePlayfairCiperMenu()
+        public static IConsoleMenuBase CreatePlayfairCiperMenu()
         {
             return new PlayfairCiperMenu();
         }
 
+        public static IConsoleMenuBase CreateVerticalShiftCiperMenu()
+        {
+            return new VerticalShiftCiperMenu();
+        }
+
+        public static IProgramStartBase CreateConsoleUIProgram()
+        {
+            return new ConsoleUIStart();
+        }
     }
 }

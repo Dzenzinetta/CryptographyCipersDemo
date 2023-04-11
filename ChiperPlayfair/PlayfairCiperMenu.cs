@@ -2,25 +2,22 @@
 
 namespace PlayfairCiper
 {
-    public class PlayfairCiperMenu : ConsoleMenuBase, IConsoleMenuBase
+    public class PlayfairCiperMenu : ConsoleMenuBase//, IConsoleMenuBase
     {
-        public override string ProgramTitle { get; } = "Playfair";
-
-        public override List<string> Options { get; set; }
-        
-        
         public override void FillMenuList()
         {
-            Options = new List<string>();
-            Options.Add("Encryption algorithm");
-            Options.Add("Decryption algorithm");
-            Options.Add("Go Back");
+            Options = new List<string>
+            {
+                "Encryption algorithm",
+                "Decryption algorithm",
+                "Go Back"
+            };
         }
 
         public override void MenuSelector()
         {
             TextManipulator.ResetCursorVisible();
-            switch (SelectedOption)
+            switch (selectedOption)
             {
                 case 0:
                     {
@@ -35,6 +32,11 @@ namespace PlayfairCiper
                         break;
                     }
             }
+        }
+
+        protected override string SetProgramTitle()
+        {
+            return "Playfair";
         }
     }
 }

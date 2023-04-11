@@ -2,12 +2,8 @@
 
 namespace AffineCiper
 {
-    public class AffineCiperMenu : ConsoleMenuBase, IConsoleMenuBase
+    public class AffineCiperMenu : ConsoleMenuBase//, IConsoleMenuBase
     {
-        public override List<string> Options { get; set; }
-
-        public override string ProgramTitle { get; } = "Affine";
-
         private IAffineProgramStart _starter;
 
         public override void FillMenuList()
@@ -23,7 +19,7 @@ namespace AffineCiper
         public override void MenuSelector()
         {
             TextManipulator.ResetCursorVisible();
-            switch (SelectedOption)
+            switch (selectedOption)
             {
                 case 0:
                     {
@@ -38,6 +34,11 @@ namespace AffineCiper
                         break;
                     }
             }
+        }
+
+        protected override string SetProgramTitle()
+        {
+            return "Affine";
         }
     }
 }

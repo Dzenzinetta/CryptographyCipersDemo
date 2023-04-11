@@ -4,7 +4,7 @@ namespace PlayfairCiper
 {
 	public class PlayfairCiperMain
 	{
-		private ITextInput _consoleInput = UtilityControl.CreateInputFromConsole();
+		//private ITextInput _consoleInput = UtilityControl.CreateInputFromConsole();
 		//Other other = new Other();
 		PositionOfSymbolsOnMatrix position = new PositionOfSymbolsOnMatrix();
 
@@ -136,7 +136,7 @@ namespace PlayfairCiper
 			Console.Clear();
 			Console.WriteLine("Welcome to Playfair encryptor");
 			Console.WriteLine();
-			strInputWord = _consoleInput.GetString("1. Enter word for encryption");
+			strInputWord = InputFromConsole.GetString("1. Enter word for encryption");
 
             //do
             //{

@@ -1,6 +1,6 @@
 ﻿namespace VerticalShiftCiper
 {
-    public class DecryptorProgramStart : ProgramStartBase
+    public class DecryptorProgramStart : VerticalShiftCiperStartBase
     {
         protected override IVerticalShiftCiperBase GetVerticalShiftCiperProgramType()
         {

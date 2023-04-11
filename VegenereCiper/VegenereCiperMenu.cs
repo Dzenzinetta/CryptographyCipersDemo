@@ -4,10 +4,6 @@ namespace VegenereCiper
 {
     public class VegenereCiperMenu : ConsoleMenuBase //, IConsoleMenuBase
     {
-        public override string ProgramTitle { get; } = "Vegenere";
-
-        public override List<string> Options { get; set; }
-
         private IVegenereProgramBase _ciperBase;
         public override void FillMenuList()
         {
@@ -23,7 +19,7 @@ namespace VegenereCiper
         public override void MenuSelector()
         {
             TextManipulator.ResetCursorVisible();
-            switch (SelectedOption)
+            switch (selectedOption)
             {
                 case 0:
                     {
@@ -43,6 +39,11 @@ namespace VegenereCiper
                         break;
                     }
             }
+        }
+
+        protected override string SetProgramTitle()
+        {
+            return "Vegenere";
         }
     }
 }
